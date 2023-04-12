@@ -9,11 +9,21 @@ import { SITE_DESCRIPTION,SITE_TITLE } from '../consts';
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				height: 80vh;
+				width: 100%;
+				background-color: blueviolet;
+			}
+			h1 {			
+				color: white;
+			}
+		</style>
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-			<h1>🧑‍🚀 Hello!</h1>
+			<h1>🧑 Hello!</h1>
 		</main>
 		<Footer />
 	</body>
