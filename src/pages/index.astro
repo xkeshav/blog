@@ -2,28 +2,22 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION,SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import '../styles/main.css';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				height: 80vh;
-				width: 100%;
-				background-color: blueviolet;
-			}
-			h1 {			
-				color: white;
-			}
-		</style>
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-			<h1>🧑 Hello!</h1>
+			<!--<p>Hello and Namaskar</p>-->
+			<div class="main__container">
+				<h1>site is under progress.</h1>
+			</div>
 		</main>
 		<Footer />
 	</body>

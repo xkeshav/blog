@@ -2,5 +2,6 @@
 	"cSpell.words": [
 		"Astro",
 		"astrojs"
-	]
+	],
+	"explorer.excludeGitIgnore": false
 }

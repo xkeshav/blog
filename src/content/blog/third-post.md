@@ -9,9 +9,9 @@ heroImage: "/placeholder-hero.jpg"
 
 Regular expressions are useful to parse a file and validate or replace with our need, few of examples are regex are
 
- - email address validation
- - number validation
- - password validation and strength check
+- email address validation
+- number validation
+- password validation and strength check
 
 in this article we will explore more on regex
 
@@ -39,11 +39,11 @@ const stringRegex = new RegExp(stringPattern);
 
 // here rex and stringRegex are equivalent
 
-```
-also there are subtle difference between these 2 variation and 
+```  
 
-also when we need to use character class such as `\d` ( digit only ) `\b` (word boundary) then in string pattern we need to use extra `\` and we can get regex pattern from string pattern using `regex.source` method 
+also there are subtle difference between these 2 variation and
 
+also when we need to use character class such as `\d` ( digit only ) `\b` (word boundary) then in string pattern we need to use extra `\` and we can get regex pattern from string pattern using `regex.source` method
 
 ```js
 
@@ -60,18 +60,19 @@ console.log(stringRegex.source); // return  \d*\bcolor\b
 ## flags
 
 flags are very distinctive usage while using regex, the very common flags we use mostly are
- - `/g` --> do global search
- - `/i` --> do case insensitive search
- - `/m` --> do multiline search
 
-and tis is how do we write flag in both regex syntax 
+- `/g` --> do global search
+- `/i` --> do case insensitive search
+- `/m` --> do multiline search
+
+and tis is how do we write flag in both regex syntax
 
 in backslash pattern, write after ending `/`, for eg. `/[a-z0-9]/gi`
 in string pattern, we set as second argument, for eg. `new RegExp('[a-z0-9]', 'gi')`
 
 apart from these common flags there are few other useful flags are which we talk here
 
-### /d flag 
+### /d flag
 
 do not confuse this with `\d` character class
 
@@ -79,36 +80,30 @@ this flag is useful when we use capture groups and it provide the capture group 
 
 also note this works only when we have /g flag , means both comes together
 
-
 ### /y flag
 
 this is conditional search in regex. In Regex we can not search from a specific range like we want to search after particular match
 
 for eg. I want to capture all property of a css declaration block , so first search for opening bracket `{` and after that we search for property and value and so on but this is not possible as regex always start from start of page
 
-here sticky flag /y comes handy, we can set index of regex pattern and then match it 
-
+here sticky flag /y comes handy, we can set index of regex pattern and then match it
 
 ### /u flag
 
 this is unicode match flag as if we have smiley, or some unicode pattern in our string.
 
-also when we use \p character class then it must have `\u` flag 
-
+also when we use \p character class then it must have `\u` flag
 
 `\p` is very useful character class , so we talk about character class
 
-
 ## character class
 
+very common character class are
 
-very common character class are 
-
--  `\d` to capture digit
--  `\w` to capture all word 
--  `\s` to capture white space
--  `\p` pre defined class, `/u` flag is mandatory when we use this
-
+- `\d` to capture digit
+- `\w` to capture all word
+- `\s` to capture white space
+- `\p` pre defined class, `/u` flag is mandatory when we use this
 
 ## RegEx return
 

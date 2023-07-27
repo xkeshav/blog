@@ -1,0 +1,72 @@
+@import './variable.css';
+
+main {
+	color: var(--main-color);
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+
+@keyframes gradient {
+	0% {
+			background-position: 0% 50%;
+	}
+	50% {
+			background-position: 100% 50%;
+	}
+	100% {
+			background-position: 0% 50%;
+	}
+}
+
+
+
+cite {
+	mix-blend-mode: multiply;
+	font-size: larger;
+}
+
+header {
+	margin: 0em 0 2em;
+  display: grid;
+  grid-template-columns: 30vw auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main__container {
+	display: grid;
+  place-content: center;
+  height: 80vh;
+	font-size: 30px;
+}
+
+.main__container h1{
+  margin: 0;
+  font-size: 10rem;
+  color: rgba(225,225,225, .01);
+  background-image: url(./assets/calm.jpg);
+  background-repeat: repeat;
+	background-clip: content-box;
+  -webkit-background-clip:text;
+  animation: animate 15s ease-in-out infinite;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+  @keyframes animate {
+    0%, 100% {
+      background-position: left top;
+    }
+    25%{
+      background-position: right bottom;
+    }
+    50% {
+      background-position: left bottom;
+    }
+    75% {
+      background-position: right top;
+    }   
+}
