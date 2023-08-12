@@ -6,24 +6,26 @@
 
 @import './variable.css';
 
-*{
-	box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-
 
 body {
-	font-family: Verdana, sans-serif;
-	margin: auto;
-	background-color: #fff;
-	overflow-wrap: break-word;
-	line-height: 1.5;
-	display: grid;
-	grid-auto-flow: row;
+  font-family: Verdana, sans-serif;
+  margin: auto;
+  background-color: #fff;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  display: grid;
+  grid-auto-flow: row;
   grid-template-rows: 6rem 1fr 5rem;
   height: 100vh;
-	padding: 1rem;
+  padding: 1rem;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
 }
-
 
 h1,
 h2,
@@ -31,49 +33,109 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--heading-color);
+  color: var(--heading-color);
 }
 a {
-	color: #3273dc;
+  color: #3273dc;
 }
-nav a {
-	margin-right: 10px;
-}
+
 textarea {
-	width: 100%;
-	font-size: 16px;
+  width: 100%;
+  font-size: 16px;
 }
 input {
-	font-size: 16px;
+  font-size: 16px;
 }
 content {
-	line-height: 1.6;
+  line-height: 1.6;
 }
 table {
-	width: 100%;
+  width: 100%;
 }
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 code {
-	padding: 2px 5px;
-	background-color: #f2f2f2;
+  padding: 2px 5px;
+  background-color: #f2f2f2;
 }
 pre {
-	padding: 1rem;
+  padding: 1rem;
 }
 pre > code {
-	all: unset;
+  all: unset;
 }
+
 blockquote {
-	border: 1px solid #999;
-	color: #222;
-	padding: 2px 0px 2px 20px;
-	margin: 0px;
-	font-style: italic;
+  border: 1px solid #999;
+  color: #222;
+  padding: 2px 0px 2px 20px;
+  margin: 0px;
+  font-style: italic;
+}
+
+header {
+  display: flex;
+  grid-area: header;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e4eef1;
+  padding-inline: 1rem;
+  flex-direction: row;
+}
+
+main {
+  /*color: var(--main-color);*/
+  grid-area: main;
+  border-left: 1.35rem solid grey;
+  border-radius: 20px 0 0 0;
+  height: 100vh;
+}
+
+.tiranga {
+  background: linear-gradient(to bottom, var(--first-color) 0 33%, var(--second-color) 33% 66%, var(--third-color) 66%);
+  animation: furl 4s ease-in-out infinite;
+  width: 30vmax;
+  height: 20vmax;
+}
+
+._tiranga::after {
+  content: '';
+  position: relative;
+  top: 5.3rem;
+  width: 5rem;
+  height: 5rem;
+  /*border-radius: 50%;*/
+  display: block;
+  left: 10rem;
+  border-radius: 50%;
+  background: repeating-linear-gradient(45deg, #ffffff 10px, #9198e5 12px);
 }
 
 footer {
-	justify-self: center;
+  justify-self: center;
+  align-self: end;
+  grid-area: footer;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+}
+
+@keyframes furl {
+  10% {
+    background: linear-gradient(to bottom, var(--first-color) 30%, var(--second-color) 50%, var(--third-color) 66%);
+    transform: translate(-4vw, 40rem) scale(0.35, 0.5);
+    width: 15vw;
+    border-radius: 30%;
+  }
+  50% {
+    border-radius: 0%;
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }

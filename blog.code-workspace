@@ -1,13 +1,13 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"cSpell.words": [
-			"consts",
-			"Preact"
-		]
-	}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "cSpell.words": ["consts", "Preact"],
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "eslint.codeActionsOnSave.rules": ["source.format", "source.fixAll"]
+  }
 }
