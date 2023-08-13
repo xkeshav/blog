@@ -2,16 +2,15 @@
 const { date } = Astro.props;
 import { fullEnglish } from '../utils/constants';
 
-//console.log({ fullEnglish });
+//console.log({ fullEnglish }); display in terminla; not on browser
 
 const fullDate = new Intl.DateTimeFormat('en-us', fullEnglish);
-//const hindi = new Intl.Locale('hi', 'IN');
 //const samay = new Intl.DateTimeFormat(hindi, styleOption); // TODO: hindi name display
 ---
 
-<waqt>
+<time date={date.toISOString()}>
   <p>{fullDate.format(date)}</p>
-</waqt>
+</time>
 <style>
   p {
     display: inline-block;

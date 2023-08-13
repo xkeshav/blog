@@ -20,10 +20,12 @@ export const fullEnglish = {
 	second: 'numeric',
 	calendar: 'iso8601',
 	timeZone: 'Asia/Kolkata',
-	timeZoneName: 'shortGeneric',
+	timeZoneName: 'short',
 	formatMatcher: 'basic',
 	hourCycle: 'h12',
-};
+} as const;
+
+export const hindi = new Intl.Locale('hi', "IN");
 
 export const fullHindi = {
 	weekday: 'long',
