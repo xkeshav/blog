@@ -1,14 +1,10 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
+
+//import {showDate} '../utils/regadingDate.ts';
+const today = new Intl.DateTimeFormat('en-US').format(new Date());
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	updatedDate={new Date('August 08 2022')}
-	heroImage="/placeholder-about.jpg"
->
-	<p> My name is Keshav Mohta and I am from India.</p>
-
+<Layout title="About Me" description="about keshav mohta" pubDate={new Date()} updatedDate={new Date()} heroImage="/placeholder-about.jpg">
+  <p>My name is Keshav Mohta and I am from India.</p>
 </Layout>

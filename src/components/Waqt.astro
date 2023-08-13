@@ -1,0 +1,23 @@
+---
+const { date } = Astro.props;
+import { fullEnglish } from '../utils/constants';
+
+//console.log({ fullEnglish });
+
+const fullDate = new Intl.DateTimeFormat('en-us', fullEnglish);
+//const hindi = new Intl.Locale('hi', 'IN');
+//const samay = new Intl.DateTimeFormat(hindi, styleOption); // TODO: hindi name display
+---
+
+<waqt>
+  <p>{fullDate.format(date)}</p>
+</waqt>
+<style>
+  p {
+    display: inline-block;
+    background-color: #daccec;
+    color: #171205;
+    font-weight: 400;
+    padding-inline: 0.25rem;
+  }
+</style>

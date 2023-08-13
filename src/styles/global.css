@@ -86,11 +86,14 @@ header {
 }
 
 main {
-  /*color: var(--main-color);*/
+  color: var(--main-color);
   grid-area: main;
+}
+
+.august {
+  height: 100vh;
   border-left: 1.35rem solid grey;
   border-radius: 20px 0 0 0;
-  height: 100vh;
 }
 
 .tiranga {
@@ -98,6 +101,7 @@ main {
   animation: furl 4s ease-in-out infinite;
   width: 30vmax;
   height: 20vmax;
+  display: block;
 }
 
 ._tiranga::after {
@@ -106,7 +110,6 @@ main {
   top: 5.3rem;
   width: 5rem;
   height: 5rem;
-  /*border-radius: 50%;*/
   display: block;
   left: 10rem;
   border-radius: 50%;
