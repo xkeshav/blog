@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "new File",
+      "type": "shell",
+      "command": "type NUL > ${fileDirname}\\${input:fileName}",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "fileName",
+      "description": "Complete my file name.",
+      "default": "new file name"
+    }
+  ]
+}

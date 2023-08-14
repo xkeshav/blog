@@ -90,31 +90,6 @@ main {
   grid-area: main;
 }
 
-.august {
-  height: 100vh;
-  border-left: 1.35rem solid grey;
-  border-radius: 20px 0 0 0;
-}
-
-.tiranga {
-  background: linear-gradient(to bottom, var(--first-color) 0 33%, var(--second-color) 33% 66%, var(--third-color) 66%);
-  animation: furl 4s ease-in-out infinite;
-  width: 30vmax;
-  height: 20vmax;
-  display: block;
-}
-
-._tiranga::after {
-  content: '';
-  position: relative;
-  top: 5.3rem;
-  width: 5rem;
-  height: 5rem;
-  display: block;
-  left: 10rem;
-  border-radius: 50%;
-  background: repeating-linear-gradient(45deg, #ffffff 10px, #9198e5 12px);
-}
 
 footer {
   justify-self: center;
@@ -126,19 +101,4 @@ nav {
   display: flex;
   gap: 1rem;
   text-align: center;
-}
-
-@keyframes furl {
-  10% {
-    background: linear-gradient(to bottom, var(--first-color) 30%, var(--second-color) 50%, var(--third-color) 66%);
-    transform: translate(-4vw, 40rem) scale(0.35, 0.5);
-    width: 15vw;
-    border-radius: 30%;
-  }
-  50% {
-    border-radius: 0%;
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
 }
