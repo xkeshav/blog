@@ -3,6 +3,7 @@
   color: #eaeee3;
   place-content: center;
   display: grid;
-  font-size: 30ch;
+  font-size: 10ch;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 100%;
 }
