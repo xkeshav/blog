@@ -1,0 +1,8 @@
+.main__container {
+  background-color: color-mix(in lch longer hue, rgb(179 171 159) 25%, #273a18);
+  color: #eaeee3;
+  place-content: center;
+  display: grid;
+  font-size: 30ch;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
