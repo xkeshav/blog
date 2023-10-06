@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
+import { ViewTransitions } from 'astro:transitions';
 import '../assets/styles/main.css';
 ---
 
@@ -11,11 +12,21 @@ import '../assets/styles/main.css';
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <ViewTransitions />
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main class="main__container">
-      <div>Hello!</div>
+    <main class="main__container" transition:animate="slide">
+      <h1>Namastey</h1>
+      <p>Welcome to my corner of internet. I do stuffs with ...</p>
+      <ul>
+        <li>JavaScript</li>
+        <li>Typescript</li>
+        <li>CSS</li>
+        <li>HTML</li>
+        <li>Extension development</li>
+        <li>Life</li>
+      </ul>
     </main>
     <Footer />
   </body>

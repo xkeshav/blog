@@ -1,10 +1,12 @@
 :root {
+  --font__large: clamp(1rem, -0.875rem + 5.333vw, 3.5rem);
   --bg-color: #1c1914;
   --accent-color: #438411;
   --main-bg: #ecf3e9;
   --main-color: #0f71bf;
-  --heading-color: #30362c;
+  --heading-color: #eef1eb;
   --first-color: orange;
   --second-color: white;
   --third-color: green;
+  --txt-color: hsl(60, 33%, 94%);
 }

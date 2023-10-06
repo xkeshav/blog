@@ -1,2 +1,2 @@
-export const SITE_TITLE = 'Keshav Mohta';
-export const SITE_DESCRIPTION = 'Welcome to my personal website!';
+export const SITE_TITLE = 'xkeshav.com';
+export const SITE_DESCRIPTION = 'Keshav Mohta: personal portfolio';

@@ -25,7 +25,6 @@ export const fullEnglish = {
 	hourCycle: 'h12',
 } as const;
 
-export const hindi = new Intl.Locale('hi', "IN");
 
 export const fullHindi = {
 	weekday: 'long',

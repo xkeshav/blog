@@ -1,8 +1,8 @@
 ---
-title: "All About Regex"
-description: "Regular Expression in depth"
-pubDate: "Mar 15 2023"
-heroImage: "/placeholder-hero.jpg"
+title: 'All About Regex'
+description: 'Regular Expression in depth'
+pubDate: 'Mar 15 2023'
+heroImage: '/placeholder-hero.jpg'
 ---
 
 ## Regular Expression or Regex
@@ -30,7 +30,6 @@ using '' then no need to wrap pattern in `/` `/` and then to create a regexp usi
 eg.
 
 ```js
-
 const rex = /[a-zA-Z0-9]/;
 
 const stringPattern = '[a-zA-Z0-9]';
@@ -38,15 +37,13 @@ const stringPattern = '[a-zA-Z0-9]';
 const stringRegex = new RegExp(stringPattern);
 
 // here rex and stringRegex are equivalent
-
-```  
+```
 
 also there are subtle difference between these 2 variation and
 
 also when we need to use character class such as `\d` ( digit only ) `\b` (word boundary) then in string pattern we need to use extra `\` and we can get regex pattern from string pattern using `regex.source` method
 
 ```js
-
 const rex = /\d*\bcolor\b/;
 
 const stringPattern = '\\d*\\bcolor\\b';
@@ -54,7 +51,6 @@ const stringPattern = '\\d*\\bcolor\\b';
 const stringRegex = new RegExp(stringPattern);
 
 console.log(stringRegex.source); // return  \d*\bcolor\b
-
 ```
 
 ## flags
@@ -112,15 +108,13 @@ normally we use `while` loop for `regex.match` to get all matched pattern, but e
 ### with while loop
 
 ```js
-
 const stringPattern = '[a-zA-Z0-9]*';
 
 const stringRegex = new RegExp(stringPattern, 'g');
 
 const str = 'there are 33 states and 7 union territory in india.';
 
-const matches  = str.match(stringRegex);
-
-
-
+const matches = str.match(stringRegex);
 ```
+
+### with `matchAll` method

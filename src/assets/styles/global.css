@@ -5,6 +5,21 @@
  */
 
 @import './variable.css';
+/* following :root block added by css color collector */
+:root {
+  --body__bg--1: #080508;
+  --a__txt--2: #3273dc;
+  --code__bg--3: #f2f2f2;
+  --blockquote__border--4: #999;
+  --blockquote__txt--5: #222;
+  --header__bg--6: #e4eef1;
+  --h1__txt--7: #5f83a6;
+  --h1__txt--8: #e43986;
+  --first__txt--9: rgb(160, 4, 147);
+  --first__txt--10: rgb(31, 17, 17);
+  --selection__bg--11: hsl(30, 10%, 4%);
+  --selection__txt--12: rgb(228, 179, 16);
+}
 
 * {
   box-sizing: border-box;
@@ -13,7 +28,7 @@
 body {
   font-family: Verdana, sans-serif;
   margin: auto;
-  background-color: #fff;
+  background-color: var(--body__bg--1);
   overflow-wrap: break-word;
   line-height: 1.5;
   display: grid;
@@ -36,7 +51,7 @@ h6 {
   color: var(--heading-color);
 }
 a {
-  color: #3273dc;
+  color: var(--a__txt--2);
 }
 
 textarea {
@@ -58,7 +73,7 @@ img {
 }
 code {
   padding: 2px 5px;
-  background-color: #f2f2f2;
+  background-color: var(--code__bg--3);
 }
 pre {
   padding: 1rem;
@@ -68,8 +83,8 @@ pre > code {
 }
 
 blockquote {
-  border: 1px solid #999;
-  color: #222;
+  border: 1px solid var(--blockquote__border--4);
+  color: var(--blockquote__txt--5);
   padding: 2px 0px 2px 20px;
   margin: 0px;
   font-style: italic;
@@ -80,12 +95,28 @@ header {
   grid-area: header;
   justify-content: space-between;
   align-items: center;
-  background-color: #e4eef1;
+  background-color: var(--header__bg--6);
   padding-inline: 1rem;
 }
 
 header > h1 {
-  font-size: clamp(1rem, -0.875rem + 5.333vw, 3.5rem);
+  font-size: var(--font__large);
+  color: color-mix(in hsl shorter hue, var(--h1__txt--7) 80%, var(--h1__txt--8) 20%);
+  font-weight: 400;
+  &::first-letter {
+    color: var(--first__txt--9);
+    font-weight: 400;
+    padding-inline: 0.25rem;
+  }
+  &:hover {
+    &::first-letter {
+      color: var(--first__txt--10);
+    }
+  }
+  &::selection {
+    background-color: var(--selection__bg--11);
+    color: var(--selection__txt--12);
+  }
 }
 
 main {

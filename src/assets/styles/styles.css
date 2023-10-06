@@ -1,3 +1,17 @@
 :root {
   --accent: grey;
 }
+
+@supports font-format(woff2) {
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../fonts//Roboto-Black.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+body {
+  font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+}
