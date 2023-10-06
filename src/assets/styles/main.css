@@ -1,9 +1,9 @@
 .main__container {
-  /*background-color: color-mix(in lch shorter hue, #fff6fa 25%, #bbd9cf);*/
-  background-color: color-mix(in lch shorter hue, #432e37 25%, #000000);
-  color: var(--txt-color);
-  font-family: 'Roboto';
-  font-size: 1.75ch;
+  background-color: color-mix(in lch longer hue, rgb(179 171 159) 25%, #273a18);
+  color: #eaeee3;
+  place-content: center;
+  display: grid;
+  font-size: 10ch;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   width: 100%;
-  padding: 1rem;
 }
