@@ -35,7 +35,6 @@ body {
   grid-auto-flow: row;
   grid-template-rows: 6rem 1fr 5rem;
   height: 100vh;
-  padding: 1rem;
   grid-template-areas:
     'header'
     'main'

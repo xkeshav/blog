@@ -1,6 +1,11 @@
+/* following :root block added by css color collector */
+:root {
+  --main__container__bg__img--1: #181616;
+  --main__container__bg__img--2: #eb5ad1;
+}
 .main__container {
-  /*background-color: color-mix(in lch shorter hue, #fff6fa 25%, #bbd9cf);*/
-  background-color: color-mix(in lch shorter hue, #432e37 25%, #000000);
+  background-image: linear-gradient(to bottom right, var(--main__container__bg__img--1) 50%, var(--main__container__bg__img--2) 50%);
+  background-blend-mode: darken;
   color: var(--txt-color);
   font-family: 'Roboto';
   font-size: 1.75ch;
