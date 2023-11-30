@@ -118,3 +118,5 @@ const matches = str.match(stringRegex);
 ```
 
 ### with `matchAll` method
+
+to be continue...

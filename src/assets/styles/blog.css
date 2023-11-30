@@ -1,0 +1,36 @@
+.blog--section {
+  padding: 1rem;
+
+  .blog--container {
+    list-style-type: none;
+    padding: unset;
+
+    .blog--tile {
+      display: grid;
+      border: 1px solid lch(36 15.6 59.36);
+      margin: 1rem;
+      cursor: pointer;
+      place-content: start;
+      background-color: lch(3 3.95 18.3 / 0.85);
+      border-radius: 0.5dvw;
+      grid-template-columns: 1fr auto;
+      grid-auto-flow: column;
+      align-items: center;
+      padding-inline: 0.5rem;
+      > a {
+        color: lch(83 93.49 83.06);
+        padding: 2rem;
+        &:visited {
+          color: lch(42 93.06 310.41);
+        }
+      }
+    }
+  }
+}
+
+.blog--tile :global(time) {
+  flex: 0 0 130px;
+  font-style: italic;
+  color: lch(99 2.09 1.33);
+  font-size: smaller;
+}

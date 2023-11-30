@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from '../consts';
+import { SITE_ADDRESS, SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 
 const today = new Date();
@@ -10,7 +10,15 @@ const isIndependenceDay = date === 15 && month === 7;
 
 <header>
   <h1>
-    {isIndependenceDay ? `Happy Independence Day` : SITE_TITLE}
+    {
+      isIndependenceDay ? (
+        `Happy Independence Day`
+      ) : (
+        <a href={SITE_ADDRESS} target="__" rel="noopener noreferrer">
+          {SITE_TITLE}
+        </a>
+      )
+    }
   </h1>
   <nav>
     <HeaderLink href="/">Home</HeaderLink>

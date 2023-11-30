@@ -31,6 +31,9 @@
       "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#832561",
-    "window.zoomLevel": 1.25
+    "window.zoomLevel": 1.25,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    }
   }
 }
