@@ -1,8 +1,14 @@
 ---
 const today = new Date();
-const name = 'Keshav Mohta'
+const name = 'Keshav Mohta';
 ---
 
-<footer>
-	&copy; {today.getFullYear()} {name}. All rights reserved
+<footer class="flex justify-center p-6">
+  &copy; {today.getFullYear()} |
+  {name} | All rights reserved.
 </footer>
+<style>
+  footer {
+    color: white;
+  }
+</style>

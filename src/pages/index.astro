@@ -6,6 +6,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 import { ViewTransitions } from 'astro:transitions';
 import '../assets/styles/main.css';
+import Hero from '../components/Hero.astro';
 ---
 
 <!DOCTYPE html>
@@ -16,18 +17,7 @@ import '../assets/styles/main.css';
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main class="main__container" transition:animate="slide">
-      <h1>Namastey</h1>
-      <p>Welcome to my corner of internet. I do stuffs with ...</p>
-      <ul>
-        <li>JavaScript</li>
-        <li>Typescript</li>
-        <li>CSS</li>
-        <li>HTML</li>
-        <li>Extension development</li>
-        <li>& Life</li>
-      </ul>
-    </main>
+    <Hero />
     <Footer />
   </body>
 </html>

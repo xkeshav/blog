@@ -5,7 +5,7 @@
     }
   ],
   "settings": {
-    "cSpell.words": ["consts", "Preact"],
+    "cSpell.words": ["consts", "lato", "Preact"],
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "eslint.codeActionsOnSave.rules": ["source.format", "source.fixAll"],

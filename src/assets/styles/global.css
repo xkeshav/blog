@@ -26,7 +26,6 @@
 }
 
 body {
-  font-family: Verdana, sans-serif;
   margin: auto;
   background-color: var(--body__bg--1);
   overflow-wrap: break-word;
