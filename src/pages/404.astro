@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+
+import img404 from "@/assets/404.jpg";
+import PageLayout from "@/layouts/Base";
+
+const meta = {
+  title: "Oops! You found a missing page!",
+  description: "Oops! It looks like this page is lost in space!",
+};
+---
+
+<PageLayout meta={meta}>
+  <h1 class="title mb-6">404 | Oops something went wrong</h1>
+  <p class="mb-8">Please use the navigation to find your way back</p>
+  <div class="my-4 grid justify-center">
+    <Image class="rotate-0" src={img404} alt="a 404 image where o is with <>" loading="eager" />
+  </div>
+</PageLayout>

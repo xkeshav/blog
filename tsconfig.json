@@ -1,0 +1,30 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["es2022", "dom", "dom.iterable"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "paths": {
+      "@/assets/*": ["src/assets/*"],
+      "@/components/*": ["src/components/*.astro"],
+      "@/layouts/*": ["src/layouts/*.astro"],
+      "@/utils": ["src/utils/index.ts"],
+      "@/stores/*": ["src/stores/*"],
+      "@/types": ["src/types.ts"],
+      "@/site-config": ["src/site.config.ts"]
+    }
+  },
+  "include": ["src", "*.ts"],
+  "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
+}
