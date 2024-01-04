@@ -6,7 +6,6 @@
       "source.fixAll.markdownlint": "explicit"
     }
   },
-  "prettier.documentSelectors": ["**/*.astro"],
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -14,6 +13,5 @@
     "typescript", // Enable .ts
     "typescriptreact"
   ],
-  "cSpell.words": ["Pagefind", "Resvg"],
   "css.customData": [".vscode/tailwind.json"]
 }

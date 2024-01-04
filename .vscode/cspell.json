@@ -1,0 +1,5 @@
+{
+  "dictionaryDefinitions": [{ "name": "projectTerms", "path": "./dictionaries/project-words.txt" }],
+  "dictionaries": ["projectTerms"],
+  "languageSettings": [{ "languageId": "*", "dictionaries": ["projectTerms"] }]
+}

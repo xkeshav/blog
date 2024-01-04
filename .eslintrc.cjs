@@ -20,17 +20,19 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": ["warn", { varsIgnorePattern: "Props", ignoreRestSiblings: true }],
     indent: ["error", 2],
     "prettier/prettier": [
-      "error",
+      "off",
       {
         endOfLine: "lf",
         printWidth: 120,
         trailingComma: "es5",
         semi: false,
-        doubleQuote: true,
         jsxSingleQuote: true,
         singleQuote: false,
         useTabs: false,
         tabWidth: 2,
+      },
+      {
+        usePrettierrc: true,
       },
     ],
   },

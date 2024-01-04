@@ -12,6 +12,9 @@ module.exports = {
       options: {
         parser: "astro",
       },
+      rules: {
+        quotes: ["error", "double", { avoidEscape: true }],
+      },
     },
   ],
 };
