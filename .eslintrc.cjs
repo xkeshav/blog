@@ -18,7 +18,7 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-var-requires": "warn",
     "@typescript-eslint/no-unused-vars": ["warn", { varsIgnorePattern: "Props", ignoreRestSiblings: true }],
-    indent: ["error", "space"],
+    indent: ["error", 2],
     "prettier/prettier": [
       "error",
       {

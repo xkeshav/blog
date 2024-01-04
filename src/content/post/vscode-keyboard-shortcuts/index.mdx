@@ -1,0 +1,192 @@
+---
+title: "VS Code LifeSaver keyboard shortcuts"
+publishDate: "Jan 04 2024"
+description: "userful keyboard shortcuts doe daily use while working with vs code."
+tags: ["vscode", "tips", "productivity", "hacks"]
+---
+
+Hi,
+
+This is my very first post and this is about the most loving IDE VS CODE and few keyboard shortcut which I use daily and also few addition things how to add new keyboard shortcut or how to change/update existing keyboard shortcut.
+
+before diving into the blog, let me clear what and how key binding works for user
+
+In this post or even in vs code the `+` written in key binding is not a literal _+_ key but this is just a notation to display the key combination, also the key name shown as capital does not require to keep caps lock on or pressing with _Shift_ key, they are just lowercase letter.
+
+<small>fun fact: If you look at the keyboard, every letter written in capital on it.</small>
+
+also in VS code when you press keyboard shortcut, it is displayed in the status bar, it doesn't exist, it will be displayed there.
+
+![Key binding in vs code status bar](./status-bar.png)
+
+`Ctrl + B` means press _Ctrl_ and _B_ key together, sometime these notation can be separated with space for e.g. `Ctrl B`
+
+`Ctrl + K Ctrl + S` means
+
+. first press _Ctrl + K_ together
+. release the key
+. now press _Ctrl + S_ together ,
+
+in other way, keep `Ctrl` key pressed while pressing _K_ and _S_ and _K_ and _S_ need not to be the capital
+
+`Ctrl + K Z` means
+
+- first press _Ctrl_ and _K_ together
+- release the keys
+- now press _Z_ key only
+
+---
+
+## 1. Delete without changing the clipboard content
+
+Normally what we do to delete a line, just `Ctrl+ X` as it does the job As this is how it works in most of application, but this has a flaw, not exactly a flaw but we can say limitation or side effect.
+
+This operation cut the line, so if we have something very important in our clipboard, okay what is the clipboard?
+whenever we do copy action ( using `Ctrl + C` ) it is stored in the clipboard, so clipboard is a place where copy data being put and there is only single instance of copy data can be put, whenever we copy some other content, previous copied data being lost, so what usually we do, that first we copy 1 line and paste somewhere else and now copy next line and paste somewhere.
+
+so coming to the point, this `Ctrl + X` overwrite your clipboard data and problem here either we do `Ctrl + Z` and copy the same code block but sometimes we have something in clipboard which was copied from other place/application and in this case `Ctrl Z` will not help through.
+
+So always use `Ctrl+K` to delete the line without losing your clipboard data.
+
+in mac OS
+
+> `Cmd + Shift + K`
+
+in Ubuntu/Windows
+
+> `Ctrl + Shift+ K`
+
+## 3. Multi cursor key modifier
+
+since sublime text, multi cursor is my favourite utility, it helps to edit altogether on various places in file.
+
+in Mac OS multi cursor can be used pressing `Option` key and in Windows it can be done using `Ctrl` key but sometimes it do not seems to work (actually in Ubuntu it doesn't work) or may be you want to change the key combination for this operation, so follow below steps
+
+1. Go to settings of VS Code by pressing `Cmd + ,` or `Ctrl + ,` in open vs code instance
+2. Go to _Workspace_ tab if want this change only for this workspace and you have saved the workspace otherwise there would be only _User_ tab and you can make changes here.
+3. type in the search box _"multi cursor modifier"_
+4. in result it would be `Alt`, change it to **CtrlCmd**
+
+you can verify the setting by opening _settings.json_ ( click on top right icon on the Setting page), there would be an entry as below
+
+```json
+  "editor.multiCursorModifier": "ctrlCmd"
+```
+
+## 3. Move Line Up/Down
+
+many of times we need to move the line of code above or below some line and we usually do, Cut, and paste on the desired line but there is a easy keyboard shortcut
+
+in mac OS
+
+> `Option + KeyDown` and `Option + KeyUp`
+
+in Ubuntu
+
+> `Alt + KeyDown` and `Alt + KeyUp`
+
+**KeyDown** key is <code>&#9660;</code>
+**KeyUp** key is <code>&#9650;</code>
+
+if it does not work then open the keyboard setting and first find that what is the key shortcut defined by vs code
+to know the keyboard settings, you can click on setting icon in activity bar and click on Keyboard shortcut in the context menu or press `Ctrl+K Ctrl+ S` ( keyboard shortcut for keyboard shortcut :p)
+
+now keyboard binding panel will be open, there you can search using keyboard recording ( which described at the end of the article ) or search there _Move Line Up_
+
+There you can see the key combination, if it is empty then click on the row and it will ask to enter the desired key binding which might conflicts with other shortcut with same key binding and it will be displayed by vs code as soon as you write, either you choose some other combination or change the existing so be careful and wise here, also make sure that `when `column should not be empty, if it is empty then fill it up by right click on row and choose _Change When Expression_ option and write below line
+
+> `editorTextFocus && !editorReadonly`
+
+## 4. Select All Occurrences of a word or tag in a file
+
+Sometimes you need to select same word in the file then we can do it with below approaches
+
+- **Find and Replace** feature it with new name
+- **Rename Symbol** feature from context menu
+
+but sometimes you just want to select few occurrences of the word or string and want to do some changes, for that use
+
+in mac OS
+
+> `Cmd + D`
+
+in Ubuntu
+
+> `Ctrl + D`
+
+just select the word and press Cmd+ D, it will select the next occurrence in the file and also enable multi cursor , keep pressing `Ctrl + D` and it will select the next occurrence and so on and if it reach to end of page, it will start selecting from top of the page.
+
+## 5. Duplicate the line (Up or Down)
+
+many times we need to make few changes what written on previous line, so what we usually do, copy the line and paste on next line but there is a smart way to do it and use
+
+in mac OS
+
+> `Shift + Option + Down key`
+
+in Ubuntu
+
+> `Alt + D`
+
+if you want to search in keyboard shortcuts search with 'Copy Line Up' and 'Copy Line Down', in Ubuntu it was very lengthy key combination , so I have changed the keyboard combination by simply click on the row and assign new key binding.
+
+whenever you set your key binding, you will see entry in **keybindings.json**
+
+```json
+ {
+    "key": "alt+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+```
+
+and it will add new shortcut but if you want to remove the previous key combination then write below json also
+
+```json
+{
+  "key": "ctrl+shift+alt+down",
+  "command": "-editor.action.copyLinesDownAction",
+  "when": "editorTextFocus && !editorReadonly"
+}
+```
+
+see the minus _-_ sign ahead of the command
+
+## 6. Cursor on Previous Position
+
+in VS code, we do not have bookmarking feature by default and sometimes we want to go back where was the last cursor position, so there is shortcut for that
+
+in mac OS
+
+> `Control + -` ( its minus sign )
+
+in Ubuntu
+
+> `Ctrl + Alt + -`
+
+every time you press this it will navigate back to the previous position of cursor or we can say cursor history, even it works across open files, suppose you click on file A line #20 then file B line # 20 then file A line # 40
+
+and now when you press `Option + -` it will goes to file B line # 20 and again pressing `Option + -` will takes to file A line #20
+
+#### How to search with key binding
+
+suppose you want to know what it does when press `Alt + D`, so go to keyboard setting panel and there is keyboard icon on right side of search input, when you hover it show the title `Record Keys`. press this icon and now enter `Alt + D` in the search box, it will show the result which action is binding with given keystroke. do not enter backspace here, it will record that too, so reset again, click again to keyboard icon, clear the input field and repeat the steps.
+
+![key record in vsocde](https://i.imgur.com/OFpQKqg.gif)
+
+## Recap
+
+| mac OS                     | Windows/ Ubuntu   | action                                                 |
+| :------------------------- | :---------------- | :----------------------------------------------------- |
+| `Cmd + Shift + K`          | `Ctrl + Shift+ K` | **Deleting the line** without losing clipboard content |
+| `Option + KeyUp`           | `Alt + KeyUp`     | **Move line Up**                                       |
+| `Option + KeyDown`         | `Alt + KeyDown`   | **Move line Down**                                     |
+| `Option + Shift + KeyDown` | `Alt + D`         | **Copy the line down** i.e. duplicate the line         |
+| `Cmd + D`                  | `Ctrl + D`        | **Selecting next occurrence of the selected word**     |
+| `Ctr + -`                  | `Alt + Ctrl + -`  | go to **Previous cursor position** across the files    |
+
+|
+
+Hope you Enjoy while reading. Please do comment if something is wrong or not working,
+
+Cheers!

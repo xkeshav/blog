@@ -1,7 +1,7 @@
 {
-  "name": "Astro Theme Blog Demo",
-  "short_name": "Astro_Cactus_Blog",
-  "description": "Starter blog site for Astro",
+  "name": "Keshav Mohta: personal portfolio",
+  "short_name": "xkeshav_blog",
+  "description": "blog by Keshav Mohta",
   "icons": [
     {
       "src": "/192x192.png",

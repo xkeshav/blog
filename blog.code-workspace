@@ -28,12 +28,6 @@
     "peacock.color": "#007fff",
     "prettier.endOfLine": "lf",
     "prettier.printWidth": 120,
-    "cSpell.words": [
-      "astrojs",
-      "mdast",
-      "pagefind",
-      "resvg",
-      "shiki"
-    ]
+    "cSpell.words": ["astrojs", "mdast", "pagefind", "resvg", "shiki"]
   }
 }
