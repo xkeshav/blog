@@ -29,6 +29,7 @@
     "prettier.endOfLine": "lf",
     "prettier.printWidth": 120,
     "editor.inlayHints.enabled": "offUnlessPressed",
-    "cSpell.words": ["keyof"]
+    "cSpell.words": ["keyof"],
+    "editor.defaultFormatter": "astro-build.astro-vscode"
   }
 }
