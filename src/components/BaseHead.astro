@@ -31,7 +31,7 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <meta name="author" content={siteConfig.author} />
 
 {/* Theme Colour */}
-<meta name="theme-color" content="" />
+<meta name="theme-color" content="dark" />
 
 {/* Open Graph / Facebook */}
 <meta property="og:type" content={articleDate ? "article" : "website"} />
@@ -53,7 +53,7 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 }
 
 {/* Twitter */}
-<meta property="twitter:card" content="xkeshav_dotcom_social" />
+<meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
