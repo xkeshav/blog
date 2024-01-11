@@ -1,11 +1,12 @@
 ---
-title: "Typescript Mapped type"
+title: "Typescript Mapped Type"
 description: "learning about typescript mapped type"
 publishDate: "11 Jan 2024"
 tags: ["typescript"]
+ogImage: "/ts-map.jpeg"
 ---
 
-# mapped type use case in typescript
+## mapped type use case in typescript
 
 recently one of my friend asked me interesting question about typescript.
 
@@ -75,6 +76,8 @@ const b1: Lower = "two";
 const a2: Upper = "One";
 const b2: Upper = "Two";
 ```
+
+Note: this template literal type and Capitalize methods works with _TypeScript v 4.1_ and higher
 
 ## Demo
 
