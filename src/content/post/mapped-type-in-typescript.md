@@ -1,0 +1,86 @@
+---
+title: "Typescript Mapped type"
+description: "learning about typescript mapped type"
+publishDate: "11 Jan 2024"
+tags: ["typescript"]
+---
+
+# mapped type use case in typescript
+
+recently one of my friend asked me interesting question about typescript.
+
+```ts
+const arrA = ["one", "two"] as const;
+const a: (typeof arrA)[number] = "one"; // assigning "One" throw error which is fine
+const b: (typeof arrA)[number] = "two";
+```
+
+now he wants to create a new type which have same keys but with capital like below
+
+```ts
+const arrB = ["One", "Two"] as const;
+const a: (typeof arrB)[number] = "One"; // "one" should throw error
+const b: (typeof arrB)[number] = "Two";
+```
+
+here are my trials
+
+## Trial 1 ❌
+
+using javascript map method ato capitalize the each key and then create new type based on it
+
+```ts
+const arrB = [...arrA.map((e) => e[0].toUpperCase + e.slice(1))] as const;
+type B = (typeof arrB)[number];
+const b: B = "One";
+```
+
+but problem with this approach is that now we can assign any value to _B_ type because _B_ become `string` type because using `.map` method ( my guess )
+
+## Trial 2 ❌
+
+tried using Mapped type and one interesting example with helps of **template literal type** and inbuilt **Capitalize** method was given on [typescript official website][1] so takeing that reference tried
+
+```ts
+type CapitalKey<Type extends string> = {
+  [Key in keyof Type as `${Capitalize<Key & string>}`]: Type[Key];
+};
+
+type Caps = CapitalKey<(typeof arrA)[number]>;
+const b2: Caps = "One"; // but it gives error and possible value can be 'one' or 'two' only
+```
+
+## Trial 3 ✅
+
+now we use it simpler way using `Capitalize` method
+
+```ts
+const arrA = ["one", "two"] as const;
+
+type Lower = (typeof arrA)[number];
+
+type CapitalKey<Type extends string> = Capitalize<Type>;
+
+type Upper = CapitalKey<Lower>;
+```
+
+and this works exactly what we want
+
+```ts
+// works with lower key only
+const a1: Lower = "one";
+const b1: Lower = "two";
+
+// works with capital key only
+const a2: Upper = "One";
+const b2: Upper = "Two";
+```
+
+## Demo
+
+[typescript playground link for the same][2]
+
+---
+
+[1]: https://www.typescriptlang.org/docs/handbook/2/mapped-types.html
+[2]: https://tsplay.dev/wjlrvm

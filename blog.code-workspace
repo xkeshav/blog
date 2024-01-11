@@ -27,6 +27,8 @@
     },
     "peacock.color": "#007fff",
     "prettier.endOfLine": "lf",
-    "prettier.printWidth": 120
+    "prettier.printWidth": 120,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "cSpell.words": ["keyof"]
   }
 }
