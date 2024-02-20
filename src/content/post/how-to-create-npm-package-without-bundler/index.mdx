@@ -13,25 +13,22 @@ tags: ["npm", "javascript", "typescript"]
 
 working with javascript/typescript; sometime we create some utility methods or useful code snippet which we copy in our several projects, here some npm package handy.
 
-in this post we will create a typescript bassed npm package and how to test locally and use it.
+in this post we will create a very basic npm package and test and publish it, earlier it was in javascript but later added typescript.
 
-## Benefit of builidng npm package
 
-- it free, you can create a account on [npm](https://npmjs.org) , I would suggest to enable 2FA so it would be better while publishing the package
-- its reusable, no need to copy and save code snippet various places.
-- learn about package.json and how build and install works under the hood.
+## Pre-requisite
+- create an account on [npmjs.org website](https://npmjs.com), ite free.
+- enable 2FA so it would be comfortable while publishing the package.
+- a local project which is based on npm and with typescript support, where you can test and verify before publish the package.
+- a IDE ( preferably, VS code editor)
+- Typescript ( `npm i typescript -g` will add it globally)
+
 
 ## lets' start
 
-1. install typescript globally
+2. create new folder ( in my case, its *npm/demo* ) and navigate it from terminal and run
 
-```sh
-> npm install typescript -g
-```
-
-2. create new folder and run
-
-```sh
+```sh title="npm/demo"
 > npm init
 ```
 3. this will ask few questions and when finished , it will generate a *package.json* file in your folder,
@@ -44,13 +41,12 @@ added few necessary scripts, you can copy it from below
 ```json
 "scripts": {
   "build": "npx tsc",
-  "prepublishOnly": "npm run build",
-  "version": "npm publish --access=public"
+  "prepublishOnly": "npm run build"
 }
 ```
 #### package.json
 
-```json title="package.json"
+```json title="npm/demo/package.json"
 {
   "name": "@xkeshav/day",
   "version": "1.3.0",
@@ -65,7 +61,7 @@ added few necessary scripts, you can copy it from below
   "scripts": {
     "build": "npx tsc",
     "prepublishOnly": "npm run build",
-    "version": "npm publish --access=public"
+    "publish": "npm publish --access=public"
   },
   "keywords": [
     "day",
@@ -78,7 +74,7 @@ added few necessary scripts, you can copy it from below
   ],
   "author": "Keshav Mohta<@xkeshav>",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "typescript": "^5.3.3"
   }
 }
@@ -89,7 +85,7 @@ here important properties are *files*, *name* and *main*
   - *name* is the name of package which is used to indicate when someone do npm install, in my case here it will be `npm install @xkeshav/day`
   - we are using typescript so *main* and *types* will be there and there file location will be from *lib* folder
 
-4. create *tsconfig.json* file using
+4. create *tsconfig.json* file
 
 ```sh
 > tsc -- init
@@ -99,7 +95,7 @@ it will generate default tsconfig.json, you can remove many of rules. below is m
 
 
 #### tsconfig.json
-```json
+```json title="npm/demo/tsconfig.json"
 {
   "compilerOptions": {
     "incremental": true,
@@ -120,7 +116,7 @@ Note: here `outDir` will be same as `files` in *package.json*
 
 5. now create *src/index.ts* file and add your own code which you want to include in the package, use `export` keyword; below is the content of file
 
-```ts
+```ts title="npm/demo/src/index.ts"
 export const oneDay = 5**5 * 4**4 * 3**3 * 2**2 * 1**1;
 ```
 
@@ -140,19 +136,19 @@ before publish , if you want to verify whether our package will work as expected
 
 after the build, run below command on same folder
 
-```sh
+```sh title="npm/demo/"
 > npm link
 ```
 
-now go to any project which is npm based and typescript supported and run below
+now go to another project (which is npm based and typescript supported ) and run below
 
-```sh
+```sh title="work/react/"
 > npm link @xkeshav/day
 ```
 
 and now in any typescript file write
 
-```ts
+```ts title="work/react/src/App.tsx"
 import { oneDay } from @xkeshav/day
 
 console.log({oneDay});
@@ -160,23 +156,23 @@ console.log({oneDay});
 
 you are good to check. if you find any issue in your package; then run
 
-```sh
+```sh title="work/react/"
 > npm unlink @xkeshav/day
 ```
 
-and do changes in your main package and again repeat the same process.
+and do changes in your main package and again run `npm link` and follow the same.
 
 ### npm pack approach
 
 go to your project where custom npm package is, and run
 
-```sh
+```sh title="npm/demo/"
 > npm pack
 ```
 
-which will output like this
+which will output looks like this
 
-```sh
+``` bash
 npm notice
 npm notice package: @xkeshav/day@1.3.0
 npm notice === Tarball Contents ===
@@ -191,36 +187,39 @@ npm notice version:       1.3.0
 npm notice filename:      xkeshav-day-1.3.0.tgz
 npm notice package size:  1.5 kB
 npm notice unpacked size: 2.5 kB
-npm notice shasum:        46daa0d9cdcc34ef5d55c7c0d04d68f1f820bba6
-npm notice integrity:     sha512-hKr+wS9W3OMvK[...]+zKaFIbms6NWQ==
+npm notice shasum:        4abcdefghijklmnopqrstuvwxyz6
+npm notice integrity:     sha512-xyz==
 npm notice total files:   5
 npm notice
 xkeshav-day-1.3.0.tgz
 ```
 
-this  command wll generate a `tar.gz` file in the same folder, copy this file and paste in other project you want to use it, go to that project root and run
+after executing this command successfully,  a `tar.gz` file  will be created the same folder,
+copy this file and paste it in another project you want to use it.
 
-```sh
+now navigate to the another project root in terminal and run
+
+```sh title="work/react/"
 > npm install xkeshav-day-1.3.0.tgz
 ```
 
-this will entry in the *package.json* file as below
+above command will add entry of the package in the *package.json* file as below
 
-```json
+```json title="work/react/package.json"
   "dependencies": {
     "@xkeshav/day": "file:xkeshav-day-1.3.0.tgz"
 	}
 ```
 and now you can use the same way
 
-```ts
+```ts title="work/react/src/components/home.tsx"
 import { oneDay } from @xkeshav/day
 
 
 console.log({oneDay});
 ```
 
-if something wrong then do `npm uninstall xkeshav-day-1.3.0.tgz` and fix in the package and try
+if something went wrong while building the package, then do `npm uninstall xkeshav-day-1.3.0.tgz` and fix the issue in the package and repeat the same process to install again.
 
 
 ## Publish
@@ -229,25 +228,41 @@ now once you verified your package locally, its time to publish, for that
 
 make sure you are logged in to your npm account prior to run below command
 
-now go to your project root and run
+now go to your npm package project root and run
 
-```sh
+```sh title="npm/demo/"
 > npm publish --access=public
 ```
 
-this command will pause on one place and asked to _Enter_ and when you hit Enter, it will open npm OTP page in the browser and that page will ask to enter OTP ( if 2FA enabled ) and it will publish the package.
+this command will pause on one place and asked to _Enter_ and when you hit _Enter_, it will open npm OTP page in the browser and that page will ask to enter OTP ( if 2FA enabled )
+and then after few seconds it will publish the package and you will the information on terminal
 
-## Update the version
+alternatively you can add this command in *package.json* script ( shown in earlier code snippet )and run `npm run publish`
 
-if you want to update then update the version in package.json and repeat same process to verify in local or run
+## Update the version of package
+
+if you want to update your package then
+- either update the _version_ value in the *package.json*
+
+```json title="npm/demo/package.json"
+"version": "1.7.5"
+```
+
+or run
 
 ```sh
 > npm version <patch|minor|major>
 ```
 
-then publish it.
+which automatically update version;
+
+sidenote: `minor` will update second number by +1; `patch` will increase the third place number by `+1` and `major` will update first place number one by + 1
 
 
+
+## where to see package on npm
+
+- login to [npmjs.com](https://npmjs.com)
 you can see all your packages under your profile > packages in npm website.
 
 Thanks.

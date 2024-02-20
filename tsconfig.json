@@ -17,11 +17,13 @@
     "jsxImportSource": "react",
     "paths": {
       "@/assets/*": ["src/assets/*"],
-      "@/components/*": ["src/components/*.astro"],
+      "@/components/*": ["src/components/*"],
       "@/layouts/*": ["src/layouts/*.astro"],
       "@/utils": ["src/utils/index.ts"],
       "@/stores/*": ["src/stores/*"],
-      "@/types": ["src/types.ts"],
+      "@/types": ["src/types/index.ts"],
+      "@/config": ["src/config.ts"],
+      "@/styles/*": ["src/assets/styles/*"],
       "@/site-config": ["src/site.config.ts"]
     }
   },

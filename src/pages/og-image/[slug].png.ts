@@ -6,8 +6,8 @@ import { getEntryBySlug } from "astro:content";
 import satori, { type SatoriOptions } from "satori";
 import { html } from "satori-html";
 
-import RobotoMonoBold from "@/assets/roboto-mono-700.ttf";
-import RobotoMono from "@/assets/roboto-mono-regular.ttf";
+import RobotoMonoBold from "@/assets/fonts/roboto-mono-700.ttf";
+import RobotoMono from "@/assets/fonts/roboto-mono-regular.ttf";
 
 const ogOptions: SatoriOptions = {
   width: 1200,
