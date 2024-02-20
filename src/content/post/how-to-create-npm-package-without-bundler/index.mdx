@@ -1,14 +1,15 @@
 ---
 title: "How to create NPM package without bundler"
 description: "create a minimal typescript based npm package without any bundler."
-publishDate: "20 Feb 2024"
+publishDate: "19 Feb 2024"
+updatedDate: "20 Feb 2024"
 coverImage:
   src: "./npm-info.png"
   alt: "Npm Homepage"
 tags: ["npm", "javascript", "typescript"]
 ---
 
-# What is NPM Package ?
+#  What is NPM Package ?
 
 working with javascript/typescript; sometime we create some utility methods or useful code snippet which we copy in our several projects, here some npm package handy.
 
@@ -48,7 +49,8 @@ added few necessary scripts, you can copy it from below
 }
 ```
 #### package.json
-```json
+
+```json title="package.json"
 {
   "name": "@xkeshav/day",
   "version": "1.3.0",
@@ -81,11 +83,11 @@ added few necessary scripts, you can copy it from below
   }
 }
 ```
-here important properties are *files* , *name* and *main*
+here important properties are *files*, *name* and *main*
 
-  a. *files* will contain files, which will be downloaded when someone do `npm install your package`
-  b. *name* is the name of package which is used to indicate when someone do npm install, in my case here it will be `npm install @xkeshav/day`
-  c. we are using typescript so *main* and *types* will be there and there file location will be from *lib* folder
+  - *files* will contain files, which will be downloaded when someone do `npm install your package`
+  - *name* is the name of package which is used to indicate when someone do npm install, in my case here it will be `npm install @xkeshav/day`
+  - we are using typescript so *main* and *types* will be there and there file location will be from *lib* folder
 
 4. create *tsconfig.json* file using
 
