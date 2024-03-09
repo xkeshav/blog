@@ -17,7 +17,7 @@ tags: ["vscode", "spell", "dictionary", "tips"]
 
 open vs code settings and edit the settings.json file
 
-```json
+```json title="settings.json"
  "cSpell.customDictionaries": {
     "myDictionary": {
       "name": "myDictionary",
@@ -42,7 +42,7 @@ To add a dictionary at the project level should be defined in a _cspell.json_ fi
 
 you can add _.vscode/cSpell.json_ file
 
-```json
+```json title="./vscode/cSpell.json"
 {
   "dictionaryDefinitions": [{ "name": "projectTerms", "path": "./dictionaries/project-words.txt" }],
   "dictionaries": ["projectTerms"],

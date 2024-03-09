@@ -9,30 +9,30 @@ coverImage:
 tags: ["npm", "javascript", "typescript"]
 ---
 
-#  What is NPM Package ?
+# What is NPM Package ?
 
 working with javascript/typescript; sometime we create some utility methods or useful code snippet which we copy in our several projects, here some npm package handy.
 
 in this post we will create a very basic npm package and test and publish it, earlier it was in javascript but later added typescript.
 
-
 ## Pre-requisite
-- create an account on [npmjs.org website](https://npmjs.com), ite free.
+
+- create an account on [npmjs website](https://npmjs.com), ite free.
 - enable 2FA so it would be comfortable while publishing the package.
 - a local project which is based on npm and with typescript support, where you can test and verify before publish the package.
 - a IDE ( preferably, VS code editor)
 - Typescript ( `npm i typescript -g` will add it globally)
 
-
 ## lets' start
 
-2. create new folder ( in my case, its *npm/demo* ) and navigate it from terminal and run
+2. create new folder ( in my case, its _npm/demo_ ) and navigate it from terminal and run
 
 ```sh title="npm/demo"
 > npm init
 ```
-3. this will ask few questions and when finished , it will generate a *package.json* file in your folder,
-alternatively you can run `npm init --yes` also
+
+3. this will ask few questions and when finished , it will generate a _package.json_ file in your folder,
+   alternatively you can run `npm init --yes` also
 
 Tip: create a scoped package (i.e. name starts with `@` ) so that will be unique,
 
@@ -44,6 +44,7 @@ added few necessary scripts, you can copy it from below
   "prepublishOnly": "npm run build"
 }
 ```
+
 #### package.json
 
 ```json title="npm/demo/package.json"
@@ -63,15 +64,8 @@ added few necessary scripts, you can copy it from below
     "prepublishOnly": "npm run build",
     "publish": "npm publish --access=public"
   },
-  "keywords": [
-    "day",
-    "typescript",
-    "javascript",
-    "xkeshav"
-  ],
-  "files": [
-    "./lib/**"
-  ],
+  "keywords": ["day", "typescript", "javascript", "xkeshav"],
+  "files": ["./lib/**"],
   "author": "Keshav Mohta<@xkeshav>",
   "license": "MIT",
   "devDependencies": {
@@ -79,22 +73,23 @@ added few necessary scripts, you can copy it from below
   }
 }
 ```
-here important properties are *files*, *name* and *main*
 
-  - *files* will contain files, which will be downloaded when someone do `npm install your package`
-  - *name* is the name of package which is used to indicate when someone do npm install, in my case here it will be `npm install @xkeshav/day`
-  - we are using typescript so *main* and *types* will be there and there file location will be from *lib* folder
+here important properties are _files_, _name_ and _main_
 
-4. create *tsconfig.json* file
+- _files_ will contain files, which will be downloaded when someone do `npm install your package`
+- _name_ is the name of package which is used to indicate when someone do npm install, in my case here it will be `npm install @xkeshav/day`
+- we are using typescript so _main_ and _types_ will be there and there file location will be from _lib_ folder
+
+4. create _tsconfig.json_ file
 
 ```sh
 > tsc -- init
 ```
 
-it will generate default tsconfig.json, you can remove many of rules. below is my *tsconfig.json* file content
-
+it will generate default tsconfig.json, you can remove many of rules. below is my _tsconfig.json_ file content
 
 #### tsconfig.json
+
 ```json title="npm/demo/tsconfig.json"
 {
   "compilerOptions": {
@@ -107,22 +102,22 @@ it will generate default tsconfig.json, you can remove many of rules. below is m
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
-  }
-  ,"include": ["src"]
+  },
+  "include": ["src"]
 }
-
 ```
-Note: here `outDir` will be same as `files` in *package.json*
 
-5. now create *src/index.ts* file and add your own code which you want to include in the package, use `export` keyword; below is the content of file
+Note: here `outDir` will be same as `files` in _package.json_
+
+5. now create _src/index.ts_ file and add your own code which you want to include in the package, use `export` keyword; below is the content of file
 
 ```ts title="npm/demo/src/index.ts"
-export const oneDay = 5**5 * 4**4 * 3**3 * 2**2 * 1**1;
+export const oneDay = 5 ** 5 * 4 ** 4 * 3 ** 3 * 2 ** 2 * 1 ** 1;
 ```
 
 here in my package , named export a constant.
 
-4. build the package before publish and check the code in *lib* folder
+4. build the package before publish and check the code in _lib_ folder
 
 ```sh
 > npm run build
@@ -172,7 +167,7 @@ go to your project where custom npm package is, and run
 
 which will output looks like this
 
-``` bash
+```bash
 npm notice
 npm notice package: @xkeshav/day@1.3.0
 npm notice === Tarball Contents ===
@@ -194,7 +189,7 @@ npm notice
 xkeshav-day-1.3.0.tgz
 ```
 
-after executing this command successfully,  a `tar.gz` file  will be created the same folder,
+after executing this command successfully, a `tar.gz` file will be created the same folder,
 copy this file and paste it in another project you want to use it.
 
 now navigate to the another project root in terminal and run
@@ -203,13 +198,14 @@ now navigate to the another project root in terminal and run
 > npm install xkeshav-day-1.3.0.tgz
 ```
 
-above command will add entry of the package in the *package.json* file as below
+above command will add entry of the package in the _package.json_ file as below
 
 ```json title="work/react/package.json"
   "dependencies": {
     "@xkeshav/day": "file:xkeshav-day-1.3.0.tgz"
 	}
 ```
+
 and now you can use the same way
 
 ```ts title="work/react/src/components/home.tsx"
@@ -220,7 +216,6 @@ console.log({oneDay});
 ```
 
 if something went wrong while building the package, then do `npm uninstall xkeshav-day-1.3.0.tgz` and fix the issue in the package and repeat the same process to install again.
-
 
 ## Publish
 
@@ -237,12 +232,13 @@ now go to your npm package project root and run
 this command will pause on one place and asked to _Enter_ and when you hit _Enter_, it will open npm OTP page in the browser and that page will ask to enter OTP ( if 2FA enabled )
 and then after few seconds it will publish the package and you will the information on terminal
 
-alternatively you can add this command in *package.json* script ( shown in earlier code snippet )and run `npm run publish`
+alternatively you can add this command in _package.json_ script ( shown in earlier code snippet )and run `npm run publish`
 
 ## Update the version of package
 
 if you want to update your package then
-- either update the _version_ value in the *package.json*
+
+- either update the _version_ value in the _package.json_
 
 ```json title="npm/demo/package.json"
 "version": "1.7.5"
@@ -256,13 +252,11 @@ or run
 
 which automatically update version;
 
-sidenote: `minor` will update second number by +1; `patch` will increase the third place number by `+1` and `major` will update first place number one by + 1
-
-
+side note: `minor` will update second number by +1; `patch` will increase the third place number by `+1` and `major` will update first place number one by + 1
 
 ## where to see package on npm
 
 - login to [npmjs.com](https://npmjs.com)
-you can see all your packages under your profile > packages in npm website.
+  you can see all your packages under your profile > packages in npm website.
 
 Thanks.
