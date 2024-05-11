@@ -1,0 +1,22 @@
+---
+import "@/assets/styles/capital.css";
+
+type GroupItem = {
+  state: string;
+  capital: string;
+};
+
+interface Props {
+  item: GroupItem;
+}
+const { item } = Astro.props;
+
+const { state, capital } = item;
+---
+
+<section>
+  <details>
+    <summary>{state}</summary>
+    <p>{capital}</p>
+  </details>
+</section>

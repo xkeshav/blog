@@ -1,6 +1,6 @@
 {
   "name": "xkeshav-portfolio",
-  "version": "1.7.5",
+  "version": "1.8.5",
   "private": false,
   "scripts": {
     "dev": "astro dev",
@@ -19,7 +19,7 @@
     "@astrojs/tailwind": "^5.0.3",
     "astro": "^4.0.3",
     "astro-expressive-code": "^0.33.0",
-    "astro-icon": "^0.8.2",
+    "astro-icon": "^1.1.0",
     "rehype-external-links": "^3.0.0",
     "satori": "^0.10.11",
     "satori-html": "^0.3.2",
@@ -27,6 +27,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.3.1",
+    "@iconify-json/mdi": "^1.1.66",
+    "@iconify/json": "^2.2.208",
     "@pagefind/default-ui": "^1.0.4",
     "@resvg/resvg-js": "^2.6.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",

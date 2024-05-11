@@ -1,0 +1,11 @@
+---
+import ItemCell from "@/components/ItemCell.astro";
+import "@/styles/capital.css";
+import { state_list } from "src/utils/constants";
+---
+
+<main>
+  <article>
+    {state_list.map((item) => <ItemCell item={item} />)}
+  </article>
+</main>

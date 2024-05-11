@@ -34,7 +34,7 @@ module.exports = {
       {
         usePrettierrc: true,
       },
-    ],
+    ]
   },
   overrides: [
     {
@@ -51,6 +51,7 @@ module.exports = {
             ul: ["list"],
           },
         ],
+        "indent": ["off"]
       },
     },
   ],

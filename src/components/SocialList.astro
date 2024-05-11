@@ -1,10 +1,10 @@
 ---
-import { Icon } from "astro-icon";
-
 /**
 	Uses https://github.com/natemoo-re/astro-icon#readme
 	Find icons @ https://icones.js.org/
 */
+import { Icon } from "astro-icon/components";
+
 const socialLinks: Array<{
   name: string;
   friendlyName: string;
@@ -40,7 +40,7 @@ const socialLinks: Array<{
       socialLinks.map(({ link, name, friendlyName }) => (
         <li class="flex">
           <a class="inline-block p-1 sm:hover:text-link" href={link} target="_blank" rel={`noopener noreferrer`}>
-            <Icon class="h-6 w-6" name={name} aria-hidden="true" focusable="false" />
+            <Icon name={name} aria-hidden="true" focusable="false" />
             <span class="sr-only">{friendlyName}</span>
           </a>
         </li>
