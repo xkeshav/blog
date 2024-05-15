@@ -1,16 +1,15 @@
 ---
-title: "Things to do in Ubuntu 24.04"
+title: "Ubuntu tips"
 publishDate: "15 May 2024"
-description: "A guide how to start with Ubuntu 24.04"
-tags: ["ubuntu", "2404"]
-ogImage: "/social-card.png"
+description: "Ubuntu tip for Ubuntu 24.04"
+tags: ["ubuntu", "tips"]
 ---
 
 ## install Ubuntu
 
 install ubuntu 24.04 using USb or whatever way; here I am telling what I do after installation of ubuntu to make it better
 
-![Ubuntu Desktop](ubuntu_24_04.png)
+![Ubuntu Desktop](./ubuntu_24_04.png)
 
 ## Settings
 

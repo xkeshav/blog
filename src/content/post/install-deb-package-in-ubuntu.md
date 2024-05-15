@@ -1,9 +1,9 @@
 ---
 
-title: "Install .deb package in Ubuntu"
+title: "install deb package in Ubuntu"
 publishDate: "15 May 2024"
-description: "How to install .deb package"
-tags: ["ubuntu", "install", "deb" " package"]
+description: "How to install a deb package in Ubuntu 24.04"
+tags: ["ubuntu", "install", "deb", " package"]
 
 ---
 
