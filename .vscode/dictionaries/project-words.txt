@@ -1,2 +1,5 @@
+iconify
 partytown
+rehype
 Resvg
+shiki
