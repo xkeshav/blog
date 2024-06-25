@@ -1,26 +1,14 @@
 ---
 import Article from "@/components/Article.astro";
 import PageLayout from "@/layouts/Base";
+import "@/styles/article.css";
+import { workList } from "src/utils/constants";
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-  <section>
-    <h1 class="title mb-6">My work</h1>
-    <p class="mb-4">Below are the list of few of my work.</p>
-    <Article
-      name="@xkeshav/watch"
-      description="A npm package for react typecscript application to debug and view data in console or in page"
-      link="https://www.npmjs.com/package/@xkeshav/watch"
-    />
-    <Article
-      name="@xkeshav/day"
-      description="A basic npm package which return number of milliscond in a day"
-      link="https://www.npmjs.com/package/@xkeshav/day"
-    />
-    <Article
-      name="CSS Color Collector"
-      description=" A VS Code extension which collect all colors from a css file and assign all colors in intuttive variable name."
-      link="https://marketplace.visualstudio.com/items?itemName=xkeshav.css-color-collector"
-    />
+  <h1 class="title mb-6">My work</h1>
+  <p class="mb-4">Below are the list of few of my work.</p>
+  <section class="work__section">
+    {workList.map((work) => <Article {...work} />)}
   </section>
 </PageLayout>

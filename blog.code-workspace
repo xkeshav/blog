@@ -29,7 +29,7 @@
 	},
     "peacock.color": "#334455",
     "prettier.endOfLine": "lf",
-    "prettier.printWidth": 120,
+    "prettier.printWidth": 150,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "cSpell.words": ["keyof"],
     "editor.defaultFormatter": "astro-build.astro-vscode",
@@ -37,6 +37,8 @@
 	"editor.detectIndentation": true,
 	"[css]": {
 		"editor.defaultFormatter": "vscode.css-language-features"
-	}
+	},
+	"tailwind-fold.unfoldIfLineSelected": true,
+	"editor.unfoldOnClickAfterEndOfLine": true
   }
 }

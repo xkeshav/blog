@@ -7,7 +7,7 @@ tags: ["ubuntu", "install", "deb", " package"]
 
 ---
 
-# Install .deb file as package
+## Install .deb file as package
 
 in Ubuntu ; to install any software ; if you found .deb package then download it
 
@@ -31,7 +31,7 @@ Note: don't forget to add `./` even you are in same location where package is do
 
 ```sh
 
- > sudo gpkg -i <./absolute/path/to/package.deb>
+ > sudo dpkg -i <./absolute/path/to/package.deb>
 
  ```
 

@@ -89,3 +89,31 @@ export const state_list = [
   { "state": "Delhi", "capital": "New Delhi" },
   { "state": "Puducherry", "capital": "Puducherry" }
 ];
+
+
+export const workList = [
+  {
+    name: "CSS Color Collector",
+    description:
+      "A VS Code extension which collect all colors from a css file and assign all colors in intuttive variable name.",
+    link: "https://marketplace.visualstudio.com/items?itemName=xkeshav.css-color-collector",
+    repo: "",
+    tag: "vscode, typescript, extension, css, color",
+    date: "Feb 2023",
+  },
+  {
+    name: "@xkeshav/day",
+    description: "A npm package for react typecscript application to debug and view data in console or in page",
+    link: "https://www.npmjs.com/package/@xkeshav/watch",
+    repo: "",
+    tag: "npm, javascript, typescript, package. day",
+    date: "Feb 2024",
+  },
+  {
+    name: "@xkeshav/watch",
+    description: "A basic npm package which return number of milliscond in a day",
+    link: "https://www.npmjs.com/package/@xkeshav/day",
+    tag: "npm, javascript, typescript, react",
+    date: "Mar 2024",
+  },
+];

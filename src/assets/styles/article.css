@@ -1,0 +1,53 @@
+/* following :root block added by css color collector */
+:root {
+  color-scheme: light dark;
+  --dark__txt: #333b3c;
+  --light__txt: #efefec;
+  --dark__bg: #efedea;
+  --light__bg: #223a2c;
+  --border: grey;
+  --dark__heading__txt: blueviolet;
+  --light__heading__txt: #eb3099;
+}
+
+
+.work__section {
+  color: light-dark(var(--light__txt), var(--dark__txt));
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 8px;
+}
+
+.article__container {
+  background-color: light-dark(var(--light__bg), var(--dark__bg));
+  display: grid;
+  grid-template-rows: 2rem 1fr auto;
+  grid-auto-flow: row;
+  grid-template-areas: "head" "body" "foot";
+  grid-gap: 4px;
+  font-size: small;
+  padding: 1rem;
+  border: 1px solid var(border);
+  border-radius: 4px;
+
+  & .article__head {
+    grid-area: head;
+    font-size: large;
+    color: light-dark(var(--light__heading__txt), var(--dark__heading__txt));
+  }
+
+  & .article__body {
+    grid-area: body;
+  }
+
+  & .article__foot {
+    grid-area: foot;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  & .article__link {
+    @apply inline-flex items-center font-medium text-blue-600 hover:underline
+  }
+}
