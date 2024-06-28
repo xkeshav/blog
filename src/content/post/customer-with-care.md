@@ -17,7 +17,7 @@ style: |
   }
 ---
 
-# Pitch Deck: Customer Care Consultancy Service
+# Pitch Deck: Customer With Care
 
 ---
 
