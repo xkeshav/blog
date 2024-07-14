@@ -1,6 +1,7 @@
 ---
 title: "Ubuntu tips"
 publishDate: "15 May 2024"
+updateDate: "14 July 2024"
 description: "Ubuntu tip for Ubuntu 24.04"
 tags: ["ubuntu", "tips"]
 ---
@@ -85,6 +86,12 @@ install ubuntu 24.04 using USb or whatever way; here I am telling what I do afte
       > sudo apt install vim
     ```
 
+    - TREE
+
+   ```sh
+    > sudo apt install tree
+   ```
+
 ## Things to Notice
 
 - ubuntu default notepad support markdown; you need to change document type
@@ -101,7 +108,21 @@ install ubuntu 24.04 using USb or whatever way; here I am telling what I do afte
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo apt-get update
 sudo apt-get install grub-customizer
+
+
 ```
+
+## Install File Manager
+
+```sh
+> sudo apt install nautilus
+```
+
+---
+
+install tree
+
+> sudo apt install tree
 
 Hope it helps to setup your ubuntu.
 

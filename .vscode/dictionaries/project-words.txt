@@ -1,6 +1,7 @@
 dpkg
 iconify
 partytown
+pinterest
 rehype
 Resvg
 shiki
