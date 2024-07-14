@@ -1,7 +1,32 @@
 {
   "name": "xkeshav-portfolio",
   "version": "1.8.5",
+  "displayName": "xkeshav.com",
+  "description": "This is a xkeshav.com repository.",
   "private": false,
+  "publisher": "@xkeshav",
+  "homepage": "https://github.com/xkeshav/blog/blob/main/README.md",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/xkeshav/blog/issues",
+    "email": "xkeshav@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xkeshav/blog.git"
+  },
+  "keywords": [
+    "xkeshav",
+    "personal",
+    "blog",
+    "Keshav Mohta",
+    "portfolio"
+  ],
+  "author": {
+    "name": "Keshav Mohta",
+    "email": "xkeshav@gmail.com"
+  },
+  "contributors": [],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
