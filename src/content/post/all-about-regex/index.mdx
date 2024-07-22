@@ -115,4 +115,142 @@ const stringRegex = new RegExp(stringPattern, "g");
 const str = "there are 33 states and 7 union territory in india.";
 
 const matches = str.match(stringRegex);
+
+while ((result = str.match(stringRegex)) !== null) {
+  doSomethingWith(result);
+}
+
 ```
+
+Note: above will return Array(21) every word and empty string as match. why?
+
+because we are using `*` so it means 0 or 1 time
+
+to match only word; change `*` with `+`
+
+```js
+const stringPattern = "[a-zA-Z0-9]+";
+```
+
+now it will return Array(10)
+
+### with `matchAll`
+
+```js
+const stringPattern = "[a-zA-Z0-9]+";
+
+const stringRegex = new RegExp(stringPattern, "g");
+
+const str = "there are 33 states and 7 union territory in india.";
+
+const matches = str.matchAll(stringRegex);
+
+console.log({matches}); // this will be RegExpStringIterator
+
+const outout = Array.from(matches);
+```
+
+### Capture Groups and Named Group
+
+This is useful when you want to capture 2 or more instances but within array it is hard to identify which is matches what?
+
+for eg, I have to find out browser and version both from a user agent string
+
+navigator.userAgent gives below output in WritableStreamDefaultWriter
+
+> *"'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"*
+
+```js
+const str = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+const pattern = '(\\w*)/\(\\d*)+.(\\d*)'
+const rx = new RegExp(pattern, 'gi');
+const matches = str.matchAll(rx);
+console.log([...matches]);
+```
+which will give below result
+
+```js
+[
+    [
+        "Mozilla/5.0",
+        "Mozilla",
+        "5",
+        "0"
+    ],
+    [
+        "AppleWebKit/537.36",
+        "AppleWebKit",
+        "537",
+        "36"
+    ],
+    [
+        "Chrome/126.0",
+        "Chrome",
+        "126",
+        "0"
+    ],
+    [
+        "Safari/537.36",
+        "Safari",
+        "537",
+        "36"
+    ]
+]
+```
+but above is the result I have coped from console which show each entry as `Array(4)` but actually result structure is an mixed array ( PHP called it associative array, in Javascript it is called what?)
+
+```txt
+0: "Mozilla/5.0"
+1:"Mozilla"
+2:"5"
+3:"0"
+groups: undefined
+index: 0
+input: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+```
+
+
+
+You only access other properties using dot notation only.
+
+now we got all result but we want that it must separate each entry like
+
+```json
+{name: chrome, version: 126.0.0.0}
+{name: Safari, version: 537.36 }
+```
+and so on
+
+we can achieve this using capture group `(?<name>)`; lets  change the regex
+
+
+``js
+const pattern = '(?<Browser>\\w*)/\(?<Version>\\d*).(\\d*)'
+```
+
+and now see the result and each entry have value under `groups` key
+
+```
+0: "Mozilla/5.0"
+1: "Mozilla"
+2: "5"
+3: "0"
+groups: {Browser: 'Mozilla', Version: '5'}
+index: 0
+input: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+length: 4
+```
+
+now you can use `.matchAll()` and get `groups` property value separately and we also get index of each match in `index` property
+
+still we are not getting complete version including minor and patch ; we are getting 5 but the value we need is 5.0
+
+so modify the regex again and create a complete group for the version
+
+```js
+const pattern = '(?<Browser>\\w*)/\(?<Version>(\\d*).(\\d*)+)'
+```
+
+Task:  works fine when we have version upto 2 dots  but for chrome we have `126.0.0.0` and we want to capture complete; what could be the proper regex?
+
+[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group
