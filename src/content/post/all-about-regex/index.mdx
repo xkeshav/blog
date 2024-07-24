@@ -167,6 +167,7 @@ const rx = new RegExp(pattern, 'gi');
 const matches = str.matchAll(rx);
 console.log([...matches]);
 ```
+
 which will give below result
 
 ```js
@@ -197,6 +198,7 @@ which will give below result
     ]
 ]
 ```
+
 but above is the result I have coped from console which show each entry as `Array(4)` but actually result structure is an mixed array ( PHP called it associative array, in Javascript it is called what?)
 
 ```txt
@@ -209,8 +211,6 @@ index: 0
 input: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
 ```
 
-
-
 You only access other properties using dot notation only.
 
 now we got all result but we want that it must separate each entry like
@@ -219,18 +219,18 @@ now we got all result but we want that it must separate each entry like
 {name: chrome, version: 126.0.0.0}
 {name: Safari, version: 537.36 }
 ```
+
 and so on
 
 we can achieve this using capture group `(?<name>)`; lets  change the regex
 
-
-``js
+```js
 const pattern = '(?<Browser>\\w*)/\(?<Version>\\d*).(\\d*)'
 ```
 
 and now see the result and each entry have value under `groups` key
 
-```
+```txt
 0: "Mozilla/5.0"
 1: "Mozilla"
 2: "5"
@@ -247,10 +247,9 @@ still we are not getting complete version including minor and patch ; we are get
 
 so modify the regex again and create a complete group for the version
 
-```js
+```javascript
 const pattern = '(?<Browser>\\w*)/\(?<Version>(\\d*).(\\d*)+)'
 ```
 
-Task:  works fine when we have version upto 2 dots  but for chrome we have `126.0.0.0` and we want to capture complete; what could be the proper regex?
+Task:  works fine when we have version up to 2 dots  but for chrome we have `126.0.0.0` and we want to capture complete; what could be the proper regex?
 
-[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group
