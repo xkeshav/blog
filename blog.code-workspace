@@ -5,40 +5,51 @@
     }
   ],
   "settings": {
-    "prettier.documentSelectors": ["**/*.astro"],
+    "prettier.documentSelectors": [
+      "**/*.astro"
+    ],
     "workbench.colorCustomizations": {
-		"activityBar.activeBackground": "#465d75",
-		"activityBar.background": "#465d75",
-		"activityBar.foreground": "#e7e7e7",
-		"activityBar.inactiveForeground": "#e7e7e799",
-		"activityBarBadge.background": "#3c2430",
-		"activityBarBadge.foreground": "#e7e7e7",
-		"commandCenter.border": "#e7e7e799",
-		"sash.hoverBorder": "#465d75",
-		"statusBar.background": "#334455",
-		"statusBar.foreground": "#e7e7e7",
-		"statusBarItem.hoverBackground": "#465d75",
-		"statusBarItem.remoteBackground": "#334455",
-		"statusBarItem.remoteForeground": "#e7e7e7",
-		"titleBar.activeBackground": "#334455",
-		"titleBar.activeForeground": "#e7e7e7",
-		"titleBar.inactiveBackground": "#33445599",
-		"titleBar.inactiveForeground": "#e7e7e799",
-		"sideBar.border": "#465d75",
-		"tab.activeBorder": "#465d75"
-	},
-    "peacock.color": "#334455",
+      "activityBar.activeBackground": "#763547",
+      "activityBar.background": "#763547",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#0d160a",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "commandCenter.border": "#e7e7e799",
+      "sash.hoverBorder": "#763547",
+      "statusBar.background": "#532532",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#763547",
+      "statusBarItem.remoteBackground": "#532532",
+      "statusBarItem.remoteForeground": "#e7e7e7",
+      "titleBar.activeBackground": "#532532",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#53253299",
+      "titleBar.inactiveForeground": "#e7e7e799",
+      "sideBar.border": "#763547",
+      "tab.activeBorder": "#763547"
+    },
+    "peacock.color": "#532532",
     "prettier.endOfLine": "lf",
     "prettier.printWidth": 150,
     "editor.inlayHints.enabled": "offUnlessPressed",
-    "cSpell.words": ["keyof"],
+    "cSpell.words": [
+      "keyof"
+    ],
     "editor.defaultFormatter": "astro-build.astro-vscode",
     "editor.tabSize": 4,
-	"editor.detectIndentation": true,
-	"[css]": {
-		"editor.defaultFormatter": "vscode.css-language-features"
-	},
-	"tailwind-fold.unfoldIfLineSelected": true,
-	"editor.unfoldOnClickAfterEndOfLine": true
+    "editor.detectIndentation": true,
+    "[css]": {
+      "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[markdown]": {
+      "editor.snippetSuggestions": "top"
+    },
+    "tailwind-fold.unfoldIfLineSelected": true,
+    "editor.unfoldOnClickAfterEndOfLine": true,
+    "[snippets]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.snippetSuggestions": "top",
   }
 }

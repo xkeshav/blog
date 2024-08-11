@@ -1,0 +1,17 @@
+{
+  "blog front matter": {
+    "scope": "astro",
+    "prefix": "bgfm",
+    "body": [
+      "---",
+      "\ntitle: \"${1:title}\"",
+      "description: [\"${2:description}\"]",
+      "publishDate: \"$CURRENT_DATE $CURRENT_MONTH_NAME_SHORT $CURRENT_YEAR $CURRENT_HOUR:$CURRENT_MINUTE $CURRENT_TIMEZONE_OFFSET\"",
+      "tags: [\"blog\"]",
+      "draft: true",
+      "\n---",
+      "$0"
+    ],
+    "description": "Creates an front matter boilarplate to write blog content"
+  }
+}

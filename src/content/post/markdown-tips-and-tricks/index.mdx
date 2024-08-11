@@ -1,0 +1,98 @@
+---
+
+title: "Link Alias in Markdown file"
+description: "how do we organize links in markdown file using alias syntax "
+publishDate: "Sun, 10 Aug 2024 08:20 PM"
+tags: ["markdown", "link", "alias", "tips"]
+draft: false
+
+---
+
+# Link Alias Syntax in Markdown
+
+
+## Adding Alias for link
+
+usually what we do to insert a link in markdown file
+
+
+### Normal way
+ normally we use banana syntax i.e. using `[link](address)`; for example
+
+```md title="README.md"
+
+see my [github profile](https://github.com/xkeshav)
+```
+
+### Problem
+
+ when we have to write multiple links on multiple place in same document then we have to repeat the same syntax  and sometime same link on multiple places then it is become mess
+
+and sometimes the long link address makes file unreadable
+
+
+### Solution: Alias
+
+to overcome above issue. we can add link alias and use the alias in place of the link in `[text][alias] `format
+
+
+
+```md title="README.md"
+
+## Profile Links
+
+find me on
+
+- [stack overflow][so]
+- [github][1]
+- [twitter][x]
+
+[so]: https://stackoverflow.com/users/155861/xkeshav?tab=profile
+[1]: https://github.com/xkeshav
+[x]: https://x.com/xkeshav
+
+```
+
+and this is how it will render
+
+---
+## Profile Links
+
+find me on
+
+- [stack overflow][so]
+- [github][1]
+- [twitter][x]
+
+[so]: https://stackoverflow.com/users/155861/xkeshav?tab=profile
+[1]: https://github.com/xkeshav
+[x]: https://x.com/xkeshav
+
+---
+
+> [!NOTE]
+
+below things to consider in syntax
+
+ - no space before opening `[`
+ - put one space after colon `:`
+ - no space between link and alias `[text][alias]`
+ - alias order does not matter
+ - you can name alias to number or any word
+
+---
+
+
+## Bonus Tip
+
+you can put link either near the snippet or at the ends of content using comment feature;
+
+```markdown title="README.md"
+
+<!-- Reference Links  -->
+
+[1]: https://github.com/xkeshav
+[so]: https://stackoverflow.com/users/155861/xkeshav?tab=profile
+[x]: https://x.com/xkeshav
+
+```
