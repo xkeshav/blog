@@ -1,20 +1,18 @@
-
 ---
-title: "dom typing"
-description: ["DOM typing issue with querySelector and querySelectorAll"]
+title: "DOM typing"
+description: "DOM typing issue with querySelector and querySelectorAll"
 publishDate: "13 Aug 2024"
-tags: ["blog", "typescript", "DOM"],
-
+updateDate: "13 Aug 2024"
+tags: ["blog", "typescript", "DOM"]
 ---
 
-### DOM method
+# DOM typings
 
 [Check code on playground](https://stackblitz.com/edit/dom-typing)
 
 we will explore and set type for DOM method; such as  `document.querySelector()` and `document.querySelectorAll()`
 
-::: ❌
-below is not working
+❌ below is not working
 
 ```ts
 const radioInputList = document.querySelectorAll<RadioNodeList>('input[type=radio]');
@@ -71,3 +69,5 @@ const radioInputList: Element[] = document.querySelectorAll('input[type=radio]')
 const video = document.querySelector<HTMLVideoElement>('video') // HTMLVideoElement | null
 const audios = document.querySelectorAll('audio') as NodeListOf<HTMLAudioElement>;
 ```
+
+Hope it helps.

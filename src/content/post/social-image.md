@@ -4,7 +4,7 @@ publishDate: "27 January 2023"
 description: "An example post for Astro Blog, detailing how to add a custom social image card in the front matter"
 tags: ["example", "blog", "image"]
 ogImage: "/social-card.png"
-draft: true
+draft: false
 ---
 
 ## Adding your own social image to a post

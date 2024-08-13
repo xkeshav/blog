@@ -31,7 +31,7 @@ const someThing = someMethod(...params) as T;
 
 ## Type inference
 
-while it is possible to explicit annonate but rely on inferred type which done by typescript type system
+while it is possible to explicit annotate but rely on inferred type which done by typescript type system
 
 VS Code __Inlay Hints__ does the same
 
@@ -40,7 +40,7 @@ const n = 10;
 const now = new Date(); // Date type
 ```
 
-and when you hover on `n` , its type is `number`; there is no need to set explicit type ( i.e. type annonate `:number` )
+and when you hover on `n` , its type is `number`; there is no need to set explicit type ( i.e. type annotate `:number` )
 
 many occurrences, typescript set explicit  `any`
 
