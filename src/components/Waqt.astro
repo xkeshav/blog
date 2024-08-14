@@ -1,15 +1,14 @@
 ---
 const { date } = Astro.props;
-import { fullEnglish } from '../utils/constants';
+import { fullEnglish, fullHindi } from "../utils/constants";
 
-//console.log({ fullEnglish }); // display in terminal; not on browser
-
-const fullDate = new Intl.DateTimeFormat('en-us', fullEnglish);
-//const samay = new Intl.DateTimeFormat(hindi, styleOption); // TODO: hindi name display
+const fullDate = new Intl.DateTimeFormat("en-us", fullEnglish);
+const samay = new Intl.DateTimeFormat("hi", fullHindi); // TODO: hindi name display
 ---
 
 <time datetime={date.toISOString()}>
   <p>{fullDate.format(date)}</p>
+  <p>{samay.format(date)}</p>
 </time>
 <style>
   p {

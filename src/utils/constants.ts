@@ -41,7 +41,7 @@ export const fullHindi = {
   timeZoneName: 'shortGeneric',
   formatMatcher: 'basic',
   hourCycle: 'h12',
-};
+} as const;
 
 export const styleOption = {
   dateStyle: 'long',
