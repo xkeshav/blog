@@ -2,7 +2,7 @@
 title: "vscode-troubleshoot-system"
 description: "VS Code troubleshoot steps to detect the buggy extension or not working keybindings"
 publishDate: "14 Aug 2024"
-tags: ["vscode", "keybinding", "debug", "extension"]
+tags: ["vscode", "keybinding", "troubleshoot", "extension","tips"]
 ---
 
 ## VS Code inbuilt feature to detect issues
@@ -17,21 +17,30 @@ Extension are great features but when we installed a lot of extension then somet
 - when save file; formatting getting changed ( which is mainly lint and formatter config; which I cover some other day)
 - on specific file types; things are not working as it should be
 
-### Disable All Extensions command
+Below approach works through Command Panel
+
+### Command Panel
+
+- from version 1.80+ the Command Panel appears in top center where see the file title. there you type command using `>` prefix 
+or
+- Press F1 or `Ctrl + P` of `Cmd+P`
+
+### Disable All Extensions
+
 there is one way to disable all extension in vs code
 
-- Open Command Panel by pressing F1 ( or `Ctrl + P` ) while focus on VS Code
+- Open Command Panel
 - type `Disable All Extensions` it will show a command with _Extensions:Disable All Extensions`_ 
-- select and hit EnterS
+- select and hit Enter
 
 and check whether behavior is still there then it is your code thing
 
 ### Extension Bisect Command
 
-and if it went then we have to find exactly which extension is buggy because we require few useful extension during work; can not take risk to disable all extension at all. 
+and if it works then we have to find exactly which extension is buggy because few useful extension are needed during work; we can not take risk to disable all extension every time. so here is the way 
 
-- Type F1
-- search for **Extension Bisect** ; it will show _Help: Start Extension Bisect_ 
+- Command Panel using 
+- type `Extension Bisect`; it will show _Help: Start Extension Bisect_
 - Select that and a popup appears to start it as below
   
 ![extension bisect](./start_bisect_modal.png)
@@ -41,13 +50,13 @@ and if it went then we have to find exactly which extension is buggy because we 
 ![bisect prompt](./prompt_for_bisect.png)
 
 you just try to reproduce the thing which causing the issue in your editor
-select the option  appropriately, it keep bisecting by disabling less n less extension at a time and finally tell which extension is buggy and also open dialog to raise issue ( with report)
+select the option appropriately, it keep bisecting by disabling less n less extension on next iteration and finally tell which extension is buggy and also open dialog to raise issue (along with report)
 
-most of times it worked as charm
+most of times it worked for me as charm
 
 ## Keyboard Shortcut troubleshooting
 
-keyboard shortcuts are useful ; you can check all keyboard shortcut by pressing `Ctrl+K` `Ctrl+S` or on bottom Left setting gear icon and choose Keyboard Shortcuts
+Keyboard shortcuts are useful/ you can check all keyboard shortcut by pressing `Ctrl+K` `Ctrl+S` or on from bottom Left setting gear icon and choose Keyboard Shortcuts
 
 in VS Code there are many command which can be used using command center  and when we apply those there is also keyboard shortcut mentioned nearby to that command 
 
@@ -58,20 +67,27 @@ and when you try the shortcut but if it is not working then how do you ensure ?
 for eg. in Linux right and left Arrow keys are considered under NumPad but not the separate one
 
 
-> F1 
-> type for `Keyboard` and option comes as `Developer: Toggle Keyboard Shortcut Troubleshooting`  
+- Open Command Panel 
+- Type for `Keyboard` and option comes as `Developer: Toggle Keyboard Shortcut Troubleshooting`  
 
 ![keyboard troubleshoot option](./keyboard_toggle_option.png)
 
-Output Panel will be opened automatically at bottom 
-> now press the keys for the shortcut and it display the final key binding 
+An Output Panel will be opened automatically at bottom of the VS Code ( where terminal opens )
 
-![Output panel logging keyboard service](./start_bisect_modal.png)
+Fort eg. 
 
-When I check the log and found that I was using `Ctrl + K` `Ctrl + M` while keyboard shortcut is `Ctrl + K`  and `M` ( Press Ctrl + K Together and then leave `Ctrl` and just press `M` )
+I want to open Change language Mode which shows the keyboard shortcut 
 
-you can also see the key you are pressing might be understood as different identifier by VS Code system ( vary from OS to OS)
+press the shortcut key combination ( which are not working as expected ) for the operation and it display the final key bindings 
 
-Note: again click on the same option to close the troubleshoot guide
+![Output panel logging keyboard service](./keyboard_service_output.png)
+
+and in my case, when I check the log and found that I was typing `Ctrl + K` `Ctrl + M` while keyboard shortcut is `Ctrl + K`  and `M` ( Press Ctrl + K Together and then leave `Ctrl` and just press `M` )
+
+you can also notice the key, you are pressing,  might be understood as different identifier by VS Code system ( vary from OS to OS)
+
+Note: again click on the same option to close the troubleshoot guide.
+
+Thanks.
 
 

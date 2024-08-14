@@ -43,7 +43,8 @@
       "editor.defaultFormatter": "vscode.css-language-features"
     },
     "[markdown]": {
-      "editor.snippetSuggestions": "top"
+      "editor.snippetSuggestions": "top",
+      "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
     "tailwind-fold.unfoldIfLineSelected": true,
     "editor.unfoldOnClickAfterEndOfLine": true,
