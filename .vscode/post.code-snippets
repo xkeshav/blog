@@ -1,6 +1,6 @@
 {
   "blog front matter": {
-    "scope": "mdx, plaintext",
+    "scope": "markdown",
     "prefix": "bgfm",
     "body": [
       "---",
