@@ -3,7 +3,6 @@ title: "Blank Branch via git"
 description: "how to create create blank branch in github using git command"
 publishDate: "11 Feb 2024"
 tags: ["git", "github"]
-draft: true
 ---
 
 ## Blank Branch in github
