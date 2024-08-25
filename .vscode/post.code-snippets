@@ -4,9 +4,9 @@
     "prefix": "bgfm",
     "body": [
       "---",
-      "title: \"${1:title}\"",
+      "title: \"${1:${TM_FILENAME_BASE}}\"",
       "description: \"${2:description}\"",
-      "publishDate: \"$CURRENT_DATE $CURRENT_MONTH_NAME_SHORT $CURRENT_YEAR $CURRENT_HOUR:$CURRENT_MINUTE $CURRENT_TIMEZONE_OFFSET\"",
+      "publishDate: \"$CURRENT_DATE $CURRENT_MONTH_NAME_SHORT $CURRENT_YEAR\"",
       "tags: [\"blog\"]",
       "draft: true",
       "\n---",
