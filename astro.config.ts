@@ -1,5 +1,5 @@
 import mdx from "@astrojs/mdx";
-import partytown from '@astrojs/partytown';
+import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import expressiveCode from "astro-expressive-code";
@@ -15,44 +15,49 @@ export default defineConfig({
   site: "https://xkeshav.com/",
   markdown: {
     remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
-    rehypePlugins: [[rehypeExternalLinks, {
-      target: "_blank",
-      rel: ["nofollow, noopener, noreferrer"]
-    }]],
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          target: "_blank",
+          rel: ["nofollow, noopener, noreferrer"],
+        },
+      ],
+    ],
     remarkRehype: {
       footnoteLabelProperties: {
-        className: [""]
-      }
+        className: [""],
+      },
     },
     shikiConfig: {
       theme: "dracula",
-      wrap: true
-    }
+      wrap: true,
+    },
   },
   integrations: [
-    icon({ iconDir: "src/assets/icons", }),
+    icon({ iconDir: "src/icons" }),
     expressiveCode(),
     mdx({}),
     tailwind({
-      applyBaseStyles: false
+      applyBaseStyles: false,
     }),
     sitemap(),
-    partytown()
+    partytown(),
   ],
   image: {
-    domains: []
+    domains: [],
   },
   devToolbar: {
-    enabled: false
+    enabled: false,
   },
   // https://docs.astro.build/en/guides/prefetch/
   prefetch: true,
   vite: {
     plugins: [rawFonts([".ttf"])],
     optimizeDeps: {
-      exclude: ["@resvg/resvg-js"]
-    }
-  }
+      exclude: ["@resvg/resvg-js"],
+    },
+  },
 });
 function rawFonts(ext: Array<string>) {
   return {
@@ -60,13 +65,13 @@ function rawFonts(ext: Array<string>) {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore:next-line
     transform(_, id) {
-      if (ext.some(e => id.endsWith(e))) {
+      if (ext.some((e) => id.endsWith(e))) {
         const buffer = fs.readFileSync(id);
         return {
           code: `export default ${JSON.stringify(buffer)}`,
-          map: null
+          map: null,
         };
       }
-    }
+    },
   };
 }

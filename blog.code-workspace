@@ -42,7 +42,6 @@
     },
     "[markdown]": {
       "editor.snippetSuggestions": "top",
-      "editor.defaultFormatter": "yzhang.markdown-all-in-one",
       "editor.quickSuggestions": {
         "other": true,
         "comments": true,
@@ -55,5 +54,10 @@
       "editor.defaultFormatter": "vscode.json-language-features"
     },
     "editor.snippetSuggestions": "top",
+    "git.postCommitCommand": "push",
+    "git.rememberPostCommitCommand": true,
+    "[xml]": {
+      "editor.defaultFormatter": "redhat.vscode-xml"
+    },
   }
 }
