@@ -32,6 +32,7 @@
     "prettier.printWidth": 150,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "cSpell.words": [
+      "ffplay",
       "keyof"
     ],
     "editor.defaultFormatter": "astro-build.astro-vscode",
