@@ -14,16 +14,17 @@ tags: ["github", "namecheap", "domain", "host"]
 2. click `Add a domain` button , page link will be *github.com/settings/pages_verified_domains/new*
 
 3. write domain name with without `www` ; click on *Add domain* ; it will display to add DNS TXT record details
-![github domain verification page](github-domain-verification-page.webp)
+![github domain verification page]('./github-domain-verification-page.webp)
+
 4. keep open this page; copy these record and go to your domain provider; in my case it is namecheap.com
 
 ## Add DNS record in domain provider
 
-1. Login to namecheap
+1. Login to namecheap.com
 2. go to Domain List
 3. click on *Manage* button against your domain
 4. Click on *Advanced DNS* tab
-5. Under HOST RECORDS panel click on ADD NEW RECORD plus icon ![namecheap-host-page](namecheap-dns-page.webp)
+5. Under HOST RECORDS panel click on ADD NEW RECORD plus icon ![name-cheap-host-page](./namecheap-dns-page.webp)
 6. Add TXT record
     A. Select Type `TXT Record`
     B. Host Name: Copy the first value shown on github ( do not add the domain name as prefix ; just the value copied  )
@@ -41,19 +42,21 @@ tags: ["github", "namecheap", "domain", "host"]
     D. click on ✅ to save
 
     Note: all old records ( the default one ) will be automatically removed.
-    ![dns-filled-form](dns-entry-namecheapwe.webp)
+    ![dns-filled-form](./dns-entry-namecheapwe.webp)
 
 9. Now go to github again and click on Verify button
 10. it will be verified within 24 hours or immediately some time.
 11. if it is fail to verify immediately; check after some hours and click on verify again option against your domain.
-12. Finally it will look like this ; you can add multiple domain
-    ![verified domain page](verified-domain-list.webp)
+12. Finally it will look like this ; you can add multiple domain.
+
+![verified domain page](./verified-domain-list.webp)
 
 ## Bonus tip
 
 you can validate your domain using `dig` command ( need to install in system) and use it
 
-> dig <domain name only > NS
-> dig <domain name> +trace
+```sh
+> dig `domain name only` NS
+> dig `domain name` +trace
+```
 
-Thanks

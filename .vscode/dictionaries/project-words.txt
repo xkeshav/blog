@@ -1,8 +1,12 @@
+doskey
 dpkg
 iconify
+namecheap
 partytown
 pinterest
 postbuild
+regedit
 rehype
 Resvg
 shiki
+USERPROFILE
