@@ -6,7 +6,7 @@ updateDate: "13 Aug 2024"
 tags: ["blog", "typescript", "DOM"]
 ---
 
-# DOM typings
+## DOM typings
 
 [Check code on playground](https://stackblitz.com/edit/dom-typing)
 
@@ -25,7 +25,6 @@ radioInputList.forEach((r) => (r.checked = r.defaultValue === 'X'));
 const radioInputList = document.querySelectorAll<HTMLInputElement>('input[type=radio]');
 radioInputList.forEach((r) => (r.checked = r.defaultValue === 'X'));
 ```
-
 
 ❌ but this will not work; adding typing ahead to variable
 
@@ -52,7 +51,6 @@ radioInputList.forEach((r) => (r.checked = r.defaultValue === 'X'));
 ```ts
 const radioInputList: NodeListOf<HTMLInputElement> = document.querySelectorAll('input[type=radio]');
 ```
-
 
 ❎ below syntax are not working
 
