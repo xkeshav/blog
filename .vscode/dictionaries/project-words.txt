@@ -1,5 +1,7 @@
 doskey
 dpkg
+gedbi
+gpkg
 iconify
 namecheap
 partytown

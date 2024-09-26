@@ -1,5 +1,5 @@
 ---
-title: "Ubuntu tips"
+title: "Ubuntu Tips"
 publishDate: "15 May 2024"
 updateDate: "14 July 2024"
 description: "Ubuntu tip for Ubuntu 24.04"
