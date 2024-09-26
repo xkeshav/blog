@@ -9,7 +9,7 @@
       "publishDate: \"$CURRENT_DATE $CURRENT_MONTH_NAME_SHORT $CURRENT_YEAR\"",
       "tags: [\"blog\"]",
       "draft: true",
-      "\n---",
+      "---",
       "$0"
     ],
     "description": "Creates an front matter boilarplate to write blog content"
