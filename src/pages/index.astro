@@ -10,6 +10,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 ---
 
 <style>
+  ul {
+    margin-bottom: 1rem;
+  }
   li {
     height: max-content;
     border-inline: 1px dashed green;
@@ -28,7 +31,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
     <SocialList />
   </section>
   <section aria-label="Blog post list" class="mt-16">
-    <h2 class="mb-4 text-xl text-sky-400/100 underline underline-offset-2">Posts</h2>
+    <h2 class="mb-4 text-xl text-sky-400/100 underline underline-offset-2"><a href="/posts">Posts</a></h2>
     <ul class="space-y-4 sm:space-y-2">
       {
         allPostsByDate.map((p) => (
@@ -38,5 +41,6 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
         ))
       }
     </ul>
+    <a href="/posts"> Read More ⇾</a>
   </section>
 </PageLayout>
