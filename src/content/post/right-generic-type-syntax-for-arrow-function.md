@@ -1,5 +1,5 @@
 ---
-title: "right-generic-type-syntax-for-arrow-function"
+title: "Write Generic Type syntax for arrow function"
 description: "correct type annotation syntax for generic types in functional component"
 publishDate: "16 Nov 2024"
 tags: ["typescript", "function component", "arrow function", "fat arrow", "generic"]

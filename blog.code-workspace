@@ -74,5 +74,8 @@
       "readme.md": "*.md",
       "astro.config.ts": "*.config.js, *.config.ts, *.config.mjs"
     },
+    "files.exclude": {
+      "dist/**": true
+    },
   }
 }

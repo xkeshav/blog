@@ -12,3 +12,4 @@ rehype
 Resvg
 shiki
 USERPROFILE
+vsix

@@ -1,0 +1,107 @@
+---
+title: "Test and run your own VS Code extension"
+description: "This tells you how to start testing your vs code extension locally and debug"
+publishDate: "16 Nov 2024"
+tags: ["vscode", "testing", "extension"]
+---
+
+# Test and Run your VS Code extension locally
+
+## install yo generator for basic boilerplate of vs code
+
+1. Install the yo generator and few other packages to build and test
+2. Follow [Your First extension](https://code.visualstudio.com/api/get-started/your-first-extension)  from VS Code official blog vs code extension page,
+3. open folder of extension code and remove comments, if you want
+
+```sh
+> npm install --global yo generator-code
+```
+
+then run
+
+```sh
+yo code
+```
+
+select `typescript` and `esbuild` for the extension; you can choose anything as per the need.
+
+## Code Files
+
+## How to Run the vscode extension
+
+1. Open Command Panel in the vs code where extension codebase is opened
+2. Type _Debug_ and choose __Debug: Select and Start Debugging__ option
+3. Select _Run Extension_ ; you might not see this option then you have some other build or empty/invalid _.vscode/launch.json_ file.
+
+or Open _Run and Debug_ ( `Ctrl + Shift + D` ) tab , the least used tab , from activity bar and select Run Extensions from Drop Down
+
+Note: if you see _Node.js_ as an option then it will check package.json command and you can select to run.
+
+4. it will open new Extension Host Window.
+5. whatever you rite in console.log() will be printed on parent Window under _Debug Console_ panel
+Note: if you clear the log then there are chances you will not see that log again, so if you clear then restart complete vs code.
+
+## in Extension Host Window  
+
+- Open Command Center ( Ctrl + Shift + P )
+- Type the command which is in _package.json_ 's __contributes --> commands --> command__ attribute
+- make sure the same command must be registered in _src/extension.ts_ under `vscode.commands.registerCommand` method
+command panel will not suggest command until you type , so type complete an correct command name
+
+```json
+
+ "contributes": {
+    "commands": [
+      {
+        "command": "nut-bolt.suggestThemeName",
+        "title": "Suggest Theme Name",
+        "category": "Theme Zero"
+      }
+    ]
+ }
+```
+
+and it will execute and display "Hello World" on Bottom Right panel, this message can be changed in _extension.ts_ file
+
+```ts title="src/extension.ts"
+
+import * as vscode from 'vscode';
+
+
+export function activate(context: vscode.ExtensionContext) {
+  console.log('Congratulations, "nut-bolt" is now active!');  // displayed in the parent window, under DEBUG CONSOLE
+  const disposable = vscode.commands.registerCommand('nut-bolt.suggestThemeName', async () => {
+    vscode.window.showInformationMessage('Hello World nut-bolt!'); // displayed in child window i.e. Extension Host Window
+  });
+  context.subscriptions.push(disposable);
+}
+
+
+```
+
+it is hot reload so if you make any change in extension code from parent, it will reflect immediately.
+
+## How to debug
+
+- add breakpoint in a file and it reload the debugger or restart the task and now it will stops;
+- sometimes you see inactive dot, that will be active when extension start executing that file.
+
+## Bonus
+
+## Install my extension
+
+- if you want to install as a package locally then install `vsce` ( VS Code Extension ) CLI and then run `vsce publish`
+
+```sh
+npm install -g @vscode/vsce
+vsce publish
+```
+
+it will generate `<extension-name>.vsix` file in project directory. copy the file and
+
+open extension panel in vs code and click on `...` in _Extension:MarketPlace Tab_ and then select `Install from VSIX..`. option and choose the downloaded .vsix file.
+
+## Learn More
+
+- [VS Code Extension Anatomy](https://code.visualstudio.com/api/get-started/extension-anatomy)
+- [VS Code API](https://code.visualstudio.com/api/references/vscode-api)
