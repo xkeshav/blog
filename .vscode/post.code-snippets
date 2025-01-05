@@ -1,10 +1,10 @@
 {
   "blog front matter": {
-    "scope": "markdown",
-    "prefix": "bgfm",
+    "scope": "markdown, mdx",
+    "prefix": "frontmatter",
     "body": [
       "---",
-      "title: \"${1:${TM_FILENAME_BASE}}\"",
+      "title: \"${1:${TM_FILENAME_BASE/(^\\w*)|(-)/${1:/pascalcase}${2:+ }/g}}\"",
       "description: \"${2:description}\"",
       "publishDate: \"$CURRENT_DATE $CURRENT_MONTH_NAME_SHORT $CURRENT_YEAR\"",
       "tags: [\"blog\"]",

@@ -13,18 +13,15 @@
     const root = document.documentElement;
 
     // class already set to newTheme, exit early
-    if (
-      (newTheme === "dark" && root.classList.contains("dark")) ||
-      (newTheme === "light" && !root.classList.contains("dark"))
-    ) {
+    if ((newTheme === "dark" && root.classList.contains("dark")) || (newTheme === "light" && !root.classList.contains("dark"))) {
       return;
     }
 
     const colorThemeMetaTag = document.querySelector("meta[name='theme-color']");
     document.documentElement.classList.toggle("dark", newTheme === "dark");
-    const bgColour = getComputedStyle(document.body).getPropertyValue("--theme-bg");
+    const bgColor = getComputedStyle(document.body).getPropertyValue("--theme-bg");
 
-    colorThemeMetaTag.setAttribute("content", `hsl(${bgColour})`);
+    colorThemeMetaTag.setAttribute("content", `hsl(${bgColor})`);
     if (typeof localStorage !== "undefined") {
       localStorage.setItem("theme", newTheme);
     }

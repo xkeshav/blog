@@ -1,16 +1,14 @@
 ---
+import "@/assets/styles/global.css";
 import { siteConfig } from "@/site-config";
-import "@/styles/global.css";
-import type { SiteMeta } from "@/types";
-
-type Props = SiteMeta;
+import "@fontsource/roboto";
 
 const { title, description, ogImage, articleDate } = Astro.props;
 
 const titleSeparator = "•";
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url).href;
+const socialImageURL = new URL(ogImage ? ogImage : "/profile-placeholder.jpg", Astro.url).href;
 ---
 
 <meta charset="utf-8" />
@@ -19,9 +17,10 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <title>{siteTitle}</title>
 
 {/* Icons / Favicon */}
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" href="/icon.svg" type="image/svg+xml" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/manifest.webmanifest" />
 <link rel="canonical" href={canonicalURL} />
 
@@ -30,8 +29,9 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <meta name="description" content={description} />
 <meta name="author" content={siteConfig.author} />
 
-{/* Theme Colour */}
+{/* Theme Color */}
 <meta name="theme-color" content="dark" />
+<meta name="color-scheme" content="light dark" />
 
 {/* Open Graph / Facebook */}
 <meta property="og:type" content={articleDate ? "article" : "website"} />
@@ -53,7 +53,7 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 }
 
 {/* Twitter */}
-<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:card" content="/profile-placeholder.jpg" />
 <meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />

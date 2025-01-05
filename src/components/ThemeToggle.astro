@@ -28,7 +28,7 @@ import { Icon } from "astro-icon/components";
       this.button = this.querySelector("button") as HTMLButtonElement;
       this.observer = null;
 
-      // set inital aria-pressed value
+      // set initial aria-pressed value
       this.button.setAttribute("aria-pressed", String(rootHasDarkClass()));
 
       // button clicked, fire event

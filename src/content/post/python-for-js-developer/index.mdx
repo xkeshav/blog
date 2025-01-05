@@ -1,0 +1,187 @@
+---
+title: "Python for JavaScript Developer"
+description: "A guide  how to start and understand bit and pieces of python from a javascript ecosystem perspective"
+publishDate: "05 Jan 2025"
+tags: ["python", "poetry", "javascript", "npm", "package.json"]
+---
+
+# Setting Up a Python Project: A Guide for JavaScript Developers
+
+## For JavaScript Developers
+
+Coming from the JavaScript ecosystem, here are some key parallels:
+
+- Python's `venv` is similar to Node's `nvm`
+- `requirements.txt` is similar to `package.json`
+- `pip` is similar to `npm/yarn`
+- Poetry is similar to `yarn/pnpm` with enhanced features like `package.json` + `yarn.lock` combined
+
+## Prerequisites and Assumptions
+
+### System Requirements
+
+- Python 3.10 or higher installed (like Node.js in JavaScript)
+- Base setup tested on Ubuntu 24.04, but instructions work for all major OS
+- Terminal access (similar to running npm commands)
+
+### Important Assumptions
+
+- All commands assume `/dev/project` as your base path (customize this to your actual project location)
+- For Windows users, replace `/` with `\` and adjust paths accordingly (e.g., `C:\dev\project`)
+- Project structure exists (similar to having your React/Astro project folder)
+- You have necessary permissions (like when you need sudo for global npm installs)
+
+## Initial Project Setup
+
+### Navigate to Project
+
+```bash
+# Replace with your actual project path
+cd /dev/project
+
+# Windows users:
+cd C:\dev\project
+```
+
+💡 **Tip**: Like `pwd` in JavaScript projects, you can use `pwd` (Unix) or `cd` (Windows) to verify your current directory
+
+### Installing Developer Tools
+
+```bash
+pip3 install vulture ruff
+```
+
+💡 **Tip**: These are like ESLint/Prettier in JavaScript ecosystem
+
+## Virtual Environment Setup
+
+Think of this as creating an isolated environment (similar to using different Node versions per project)
+
+### Creating Virtual Environment
+
+```bash
+# Unix/macOS
+python3 -m venv /dev/project/.venv
+
+# Windows
+python -m venv C:\dev\project\.venv
+```
+
+💡 **Tip**: `.venv` is similar to `node_modules` - it should be in your `.gitignore`
+
+### Activating Virtual Environment
+
+```bash
+# Unix/macOS
+source /dev/project/.venv/bin/activate
+
+# Windows
+.\.venv\Scripts\activate
+```
+
+💡 **Tip**: You'll see `(.venv)` in your terminal, similar to seeing Node version when using nvm
+
+## Package Management
+
+### Approach 1: Using requirements.txt
+
+Similar to using `package.json` with fixed versions:
+
+```bash
+pip3 install -r requirements.txt
+```
+
+#### Generate requirements.txt
+
+Like `npm init` or generating `package.json`:
+
+```bash
+pip3 install pipreqs
+pipreqs . --force --ignore .venv
+```
+
+💡 **Tips**:
+
+- Check installed packages: `pip3 list` (similar to `npm list`)
+- Search for packages: `pip3 search package_name` (like `npm search`)
+- View package info: `pip3 show package_name` (similar to `npm view`)
+- Check outdated packages: `pip3 list --outdated` (like `npm outdated`)
+
+### Approach 2: Using Poetry
+
+Poetry is more like modern JavaScript package managers (yarn/pnpm):
+
+```bash
+# Installation
+# Unix/macOS
+sudo apt install python3-poetry
+# or
+pip3 install poetry
+
+# Windows
+pip install poetry
+```
+
+#### Common Poetry Commands
+
+```bash
+# Like yarn install
+poetry install
+
+# Like yarn add
+poetry add package-name
+
+# Like yarn remove
+poetry remove package-name
+
+# Like yarn upgrade
+poetry update
+```
+
+💡 **Tip**: `poetry.lock` is similar to `yarn.lock` or `package-lock.json`
+
+## Running the Application
+
+### Streamlit Setup
+
+```bash
+streamlit run app.py
+```
+
+💡 **Tip**: This is similar to `npm start` or `yarn dev` - it starts a development server
+
+### Custom Port Configuration
+
+Create `.streamlit/config.toml` (similar to `.env` files):
+
+```toml
+[server]
+port = 8085
+```
+
+## Quick Tips for JavaScript Developers
+
+1. **Package Management**:
+   - `pip` → `npm`
+   - `requirements.txt` → `package.json`
+   - `poetry` → `yarn/pnpm`
+
+2. **Environment**:
+   - `.venv` → `node_modules`
+   - `activate` script → `nvm use`
+   - `pip list` → `npm list`
+
+3. **Common Gotchas**:
+   - Always check if virtual environment is activated (look for `.venv` prefix)
+   - Use `python3` instead of `python` on Unix systems
+   - Remember to deactivate venv when switching projects
+   - Keep `requirements.txt` or `poetry.lock` in version control (like package.json)
+
+4. **Development Workflow**:
+   - Use `ruff` for linting (similar to ESLint)
+   - Consider using VS Code with Python extension (similar to JavaScript extensions)
+   - Set up `.gitignore` to exclude `.venv` (like excluding `node_modules`)
+
+Remember: Python's package management is more like npm's older versions - global vs local installations matter, and virtual environments are crucial for project isolation.
+
+For the cleanest experience, treat each Python project like a separate JavaScript project with its own dependencies and environment settings, which e will cover in next blog

@@ -6,10 +6,12 @@ iconify
 namecheap
 partytown
 pinterest
+pipreqs
 postbuild
 regedit
 rehype
 Resvg
 shiki
 USERPROFILE
+venv
 vsix
