@@ -1,0 +1,24 @@
+---
+const { name, description, link, date } = Astro.props;
+import { Icon } from "astro-icon/components";
+import "@/styles/article.css";
+---
+
+<article class="article__container">
+  <div class="article__head">
+    <a href={link}>
+      <h1 class="article__heading">{name}</h1>
+    </a>
+  </div>
+  <div class="article__body">
+    <p class="article__description">
+      {description}
+    </p>
+  </div>
+  <div class="article__foot">
+    <a href={link} class="article__link" target="__blank" rel="noopener noreferrer">watch here</a>
+    <Icon name="open">
+      <p>Publish Date:</p><span>{date}</span>
+    </Icon>
+  </div>
+</article>

@@ -1,0 +1,39 @@
+---
+import TalkCard from "@/components/TalkCard.astro";
+import PageLayout from "@/layouts/Base";
+
+const talkList = [
+  {
+    id: "1",
+    date: "2023-10-03",
+    name: "CSS Color Theory",
+    description: " All about CSS colors and its origin to all kind of syntax",
+    repo: "",
+    link: "https://www.youtube.com/watch?v=V_Bvsw9KgYI&t=4553s",
+  },
+  {
+    id: "2",
+    date: "2023-10-04",
+    name: "Deno & JSR",
+    description: "About Deno and JSR ",
+    repo: "",
+    link: "https://www.youtube.com/watch?v=2esXolL-crw",
+  },
+  {
+    id: "3",
+    date: "2023-10-05",
+    name: "VS Code",
+    description: "VS Code tricks and tips for better productivity",
+    repo: "",
+    link: "https://www.youtube.com/watch?v=SjfiRFs6U7E",
+  },
+];
+---
+
+<PageLayout meta={{ title: "Home" }}>
+  <h1 class="title mb-6">My Talks</h1>
+  <p class="mb-4">Below are the list of few of my talks.</p>
+  <section class="work__section">
+    {talkList.map((talk) => <TalkCard {...talk} />)}
+  </section>
+</PageLayout>

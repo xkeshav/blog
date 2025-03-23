@@ -51,7 +51,6 @@
         "strings": true
       }
     },
-    "tailwind-fold.unfoldIfLineSelected": true,
     "editor.unfoldOnClickAfterEndOfLine": true,
     "[snippets]": {
       "editor.defaultFormatter": "vscode.json-language-features"

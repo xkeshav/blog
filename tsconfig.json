@@ -3,7 +3,11 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
-    "lib": ["es2022", "dom", "dom.iterable"],
+    "lib": [
+      "es2022",
+      "dom",
+      "dom.iterable"
+    ],
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
@@ -15,18 +19,45 @@
     "strict": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react",
+    "noImplicitAny": true,
     "paths": {
-      "@/assets/*": ["src/assets/*"],
-      "@/components/*": ["src/components/*"],
-      "@/layouts/*": ["src/layouts/*.astro"],
-      "@/utils": ["src/utils/index.ts"],
-      "@/stores/*": ["src/stores/*"],
-      "@/types": ["src/types/index.ts"],
-      "@/config": ["src/config.ts"],
-      "@/styles/*": ["src/assets/styles/*"],
-      "@/site-config": ["src/site.config.ts"]
+      "@/assets/*": [
+        "src/assets/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/layouts/*": [
+        "src/layouts/*.astro"
+      ],
+      "@/utils": [
+        "src/utils/index.ts"
+      ],
+      "@/stores/*": [
+        "src/stores/*"
+      ],
+      "@/types": [
+        "src/types/index.ts"
+      ],
+      "@/config": [
+        "src/config.ts"
+      ],
+      "@/styles/*": [
+        "src/assets/styles/*"
+      ],
+      "@/site-config": [
+        "src/site.config.ts"
+      ]
     }
   },
-  "include": ["src", "*.ts"],
-  "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
+  "include": [
+    "src",
+    "*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*",
+    ".vscode",
+    "dist"
+  ]
 }

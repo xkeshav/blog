@@ -1,5 +1,6 @@
 doskey
 dpkg
+facewebmodal
 gedbi
 gpkg
 iconify
@@ -11,5 +12,6 @@ regedit
 rehype
 Resvg
 shiki
+unhide
 USERPROFILE
 vsix

@@ -34,7 +34,8 @@ module.exports = {
       {
         usePrettierrc: true,
       },
-    ]
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
   },
   overrides: [
     {
@@ -51,7 +52,7 @@ module.exports = {
             ul: ["list"],
           },
         ],
-        "indent": ["off"]
+        indent: ["off"],
       },
     },
   ],

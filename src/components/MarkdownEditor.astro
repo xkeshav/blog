@@ -1,0 +1,110 @@
+---
+
+---
+
+<div class="markdown-editor">
+  <div class="editor-container">
+    <textarea id="markdown-input" placeholder="Write your post here..."></textarea>
+    <div id="preview"></div>
+  </div>
+  <div class="metadata-form">
+    <input type="text" id="title" placeholder="Post Title" />
+    <input type="text" id="slug" placeholder="Post Slug" />
+    <input type="text" id="description" placeholder="Post Description" />
+    <button id="save-draft">Save Draft</button>
+    <button id="publish">Publish</button>
+  </div>
+</div>
+
+<script type="module" is:inline>
+  import { marked } from "marked";
+
+  const input = document.getElementById("markdown-input");
+  const preview = document.getElementById("preview");
+  const saveDraftBtn = document.getElementById("save-draft");
+  const publishBtn = document.getElementById("publish");
+
+  input.addEventListener("input", () => {
+    preview.innerHTML = marked(input.value);
+  });
+
+  saveDraftBtn.addEventListener("click", () => {
+    const post = {
+      title: document.getElementById("title").value,
+      slug: document.getElementById("slug").value,
+      description: document.getElementById("description").value,
+      content: input.value,
+      isDraft: true,
+    };
+    localStorage.setItem("draft-post", JSON.stringify(post));
+    alert("Draft saved!");
+  });
+
+  publishBtn.addEventListener("click", async () => {
+    const post = {
+      title: document.getElementById("title").value,
+      slug: document.getElementById("slug").value,
+      description: document.getElementById("description").value,
+      content: input.value,
+      isDraft: false,
+    };
+
+    try {
+      const response = await fetch("/api/create-post", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(post),
+      });
+
+      if (response.ok) {
+        alert("Post published successfully!");
+        localStorage.removeItem("draft-post");
+      } else {
+        alert("Failed to publish post");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred while publishing the post");
+    }
+  });
+
+  // Load draft if exists
+  const savedDraft = localStorage.getItem("draft-post");
+  if (savedDraft) {
+    const draft = JSON.parse(savedDraft);
+    document.getElementById("title").value = draft.title;
+    document.getElementById("slug").value = draft.slug;
+    document.getElementById("description").value = draft.description;
+    input.value = draft.content;
+    preview.innerHTML = marked(draft.content);
+  }
+</script>
+
+<style>
+  .markdown-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .editor-container {
+    display: flex;
+    gap: 1rem;
+  }
+  #markdown-input,
+  #preview {
+    width: 50%;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 1rem;
+  }
+  #preview {
+    overflow-y: auto;
+  }
+  .metadata-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+</style>
