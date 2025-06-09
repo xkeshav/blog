@@ -1,0 +1,394 @@
+---
+
+---
+
+<style>
+  :root {
+    --primary: #2d3e50;
+    --secondary: #3498db;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --success: #28a745;
+    --text: #333;
+    --timeline-width: 6px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--light);
+  }
+
+  header {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    color: var(--secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    color: var(--dark);
+    font-size: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    width: var(--timeline-width);
+    background-color: var(--primary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    padding: 1rem;
+    position: relative;
+    width: calc(50% - 2rem);
+    margin-bottom: 2rem;
+  }
+
+  .timeline-item:nth-child(odd) {
+    left: 0;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: calc(50% + 2rem);
+  }
+
+  .timeline-item::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    top: 1.5rem;
+  }
+
+  .timeline-item:nth-child(odd)::after {
+    right: -3rem;
+  }
+
+  .timeline-item:nth-child(even)::after {
+    left: -3rem;
+  }
+
+  .timeline-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .timeline-content:hover {
+    transform: translateY(-5px);
+  }
+
+  .date {
+    background-color: var(--secondary);
+    color: white;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .role {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .company {
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-weight: 500;
+  }
+
+  .tech-stack {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tech {
+    background-color: var(--light);
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    border: 1px solid #ddd;
+  }
+
+  .project {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: rgba(52, 152, 219, 0.05);
+    border-left: 3px solid var(--secondary);
+    border-radius: 4px;
+  }
+
+  .project-title {
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  ul {
+    list-style-position: inside;
+    margin: 1rem 0;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 2rem;
+    }
+
+    .timeline-item {
+      width: calc(100% - 4rem);
+      margin-left: 4rem;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+      left: 0;
+    }
+
+    .timeline-item::after {
+      left: -2.5rem;
+    }
+  }
+</style>
+
+<header>
+  <h1>Keshav Mohta</h1>
+  <p>Frontend & Full Stack Development Experience Summary</p>
+</header>
+
+<div class="container">
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="date">Dec 2021 - Present</span>
+        <div class="role">SDE 3</div>
+        <div class="company">JP Morgan Chase & Co.</div>
+        <ul>
+          <li>Enhanced UX for inbox and message center on chase.com</li>
+          <li>Improved SEO by modernizing chase.com logon page</li>
+          <li>Reduced technical debt through refactoring and modularization</li>
+          <li>Designed reusable component libraries</li>
+          <li>Led internal project analyzing team-wise product maturity matrices</li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech">React.js</span>
+          <span class="tech">TypeScript</span>
+          <span class="tech">Jest</span>
+          <span class="tech">Cypress</span>
+          <span class="tech">Storybook</span>
+          <span class="tech">GraphQL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="date">Jan 2019 - Dec 2021</span>
+        <div class="role">Lead Software Engineer</div>
+        <div class="company">Barclays</div>
+        <div class="project">
+          <div class="project-title">Short Income & Expenditure</div>
+          <p>
+            A feature within Barclays mobile app helping customers in arrears due to COVID-19 situations by assessing monthly disposable
+            income and setting up repayment plans.
+          </p>
+        </div>
+        <ul>
+          <li>Designed modular, reusable UI components from scratch</li>
+          <li>Collaborated with stakeholders on application workflows</li>
+          <li>Provided technical support for complex issues</li>
+          <li>Ensured accessibility compliance and performance optimization</li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech">React.js</span>
+          <span class="tech">TypeScript</span>
+          <span class="tech">Redux</span>
+          <span class="tech">Jest</span>
+          <span class="tech">Adobe Analytics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="date">May 2016 - Jan 2019</span>
+        <div class="role">Software Engineer</div>
+        <div class="company">Zymr Systems</div>
+        <div class="project">
+          <div class="project-title">Security CMS UI</div>
+          <p>
+            Advanced real-time data analysis application security UI for Virsec Systems with customizable modules and 3rd party
+            integrations. Secured 1st position for best interactive UI in RSA conference 2018.
+          </p>
+        </div>
+        <div class="tech-stack">
+          <span class="tech">Angular 6</span>
+          <span class="tech">TypeScript</span>
+          <span class="tech">HTML5</span>
+          <span class="tech">LESS</span>
+          <span class="tech">Websocket</span>
+          <span class="tech">MongoDB</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="date">Oct 2015 - Apr 2016</span>
+        <div class="role">Senior Software Engineer</div>
+        <div class="company">Volansys Technologies</div>
+        <p>Built E-Commerce platform using OCommerce CRM listed on Ebay Portal.</p>
+        <div class="tech-stack">
+          <span class="tech">PHP</span>
+          <span class="tech">MySQL</span>
+          <span class="tech">jQuery</span>
+          <span class="tech">CSS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="date">Mar 2012 - Jun 2015</span>
+        <div class="role">Senior Software Developer</div>
+        <div class="company">Dotsquares Technologies</div>
+        <ul>
+          <li>Team lead for Microsoft Dynamics CRM development</li>
+          <li>Built customized solutions for legal firms in UK</li>
+          <li>Architected scalable applications and mentored developers</li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech">PHP</span>
+          <span class="tech">MySQL</span>
+          <span class="tech">jQuery</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">HTML</span>
+          <span class="tech">CSS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="date">Jun 2011 - Feb 2012 & May 2009 - May 2010</span>
+        <div class="role">Team Lead</div>
+        <div class="company">Offshore Technolabs</div>
+        <ul>
+          <li>Developed dynamic, database-driven websites</li>
+          <li>Translated client requirements into scalable web solutions</li>
+          <li>Led end-to-end project execution</li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech">PHP</span>
+          <span class="tech">MySQL</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">jQuery</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="date">Dec 2010 - May 2011</span>
+        <div class="role">Senior Software Developer</div>
+        <div class="company">Signity Software Solutions</div>
+        <p>Worked as UI developer building mobile applications using jQuery and PHP.</p>
+        <div class="tech-stack">
+          <span class="tech">PHP</span>
+          <span class="tech">jQuery</span>
+          <span class="tech">JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // TypeScript code (compiled to JavaScript)
+  interface TimelineItem {
+    company: string;
+    period: string;
+    role: string;
+    description: string[];
+    technologies: string[];
+    project?: {
+      title: string;
+      description: string;
+    };
+  }
+
+  // Animation for timeline items on scroll
+  document.addEventListener("DOMContentLoaded", () => {
+    const timelineItems = document.querySelectorAll(".timeline-item");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    timelineItems.forEach((item) => {
+      observer.observe(item);
+    });
+  });
+</script>

@@ -12,6 +12,8 @@ regedit
 rehype
 Resvg
 shiki
+Signity
 unhide
 USERPROFILE
 vsix
+Zymr
