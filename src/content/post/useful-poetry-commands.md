@@ -2,8 +2,8 @@
 title: "Useful poetry commands"
 description: "UsefulPoetry commands for python setup"
 publishDate: "19 Sep 2025"
-tags: ["python", "poetry"]
-draft: true
+tags: ["python", "poetry", "venv"]
+draft: false
 ---
 
 ## Useful Poetry commands
