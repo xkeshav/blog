@@ -1,3 +1,4 @@
+agentmode
 distutils
 doskey
 dpkg

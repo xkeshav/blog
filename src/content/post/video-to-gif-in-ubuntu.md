@@ -7,7 +7,7 @@ tags: ["gif", "ubuntu", "ffmpeg", "video"]
 
 ## Pre-requisite
 
-1. install *ffmpeg* in Ubuntu
+1. install _ffmpeg_ in Ubuntu
 
 ```sh
 sudo apt update && sudo apt upgrade -y
@@ -27,7 +27,7 @@ ffmpeg -v
 
 this will output like below
 
-```no-lang
+```txt
 ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
 built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
 
@@ -51,11 +51,11 @@ ffmpeg -y -ss 5.0 -t 40 -i input.mp4 -i palette.png -aspect 16:9 -filter_complex
 
 > here are what these options meanings are; you can either remove or change the value of options
 
-- `-y` => overwrite output file without asking  
-- `-ss` => skip first 5 seconds  
-- `-t` => duration for 40 seconds  
-- `-i` => input ( write twice ; one for video and one for image palette )  
-- `-r` => set frame rate  
+- `-y` => overwrite output file without asking
+- `-ss` => skip first 5 seconds
+- `-t` => duration for 40 seconds
+- `-i` => input ( write twice ; one for video and one for image palette )
+- `-r` => set frame rate
 
 3. another way using `-filter_complex` option ( which is little bit tricky)
 

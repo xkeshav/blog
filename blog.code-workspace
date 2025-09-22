@@ -76,5 +76,6 @@
     "files.exclude": {
       "dist/**": true
     },
+    "explorer.compactFolders": false,
   }
 }

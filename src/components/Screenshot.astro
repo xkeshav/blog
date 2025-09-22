@@ -1,0 +1,8 @@
+---
+const { name, alt } = Astro.props;
+---
+
+<figure style="margin: 2rem 0;">
+  <img src={`/assets/images/${name}`} alt={alt} loading="lazy" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+  <figcaption style="text-align: center; font-size: 0.9rem; color: #666;">{alt}</figcaption>
+</figure>
