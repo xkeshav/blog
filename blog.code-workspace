@@ -77,5 +77,6 @@
       "dist/**": true
     },
     "explorer.compactFolders": false,
+    "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace",
   }
 }

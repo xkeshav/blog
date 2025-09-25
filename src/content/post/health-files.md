@@ -6,7 +6,7 @@ tags: ["blog", "github", "open-source", "community", "health-files", "package.js
 
 ---
 
-# Health Files
+## Health Files
 
 4 main files must be in every Github Repo
 
