@@ -26,7 +26,7 @@ export default defineConfig({
     ],
     remarkRehype: {
       footnoteLabelProperties: {
-        className: [""],
+        className: ["footer-baba"],
       },
     },
     shikiConfig: {

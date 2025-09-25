@@ -5,6 +5,7 @@ description: "How to resolve GitHub SSH permission errors when juggling multiple
 publishDate: "26 Sept 2025"
 author: "Alpha Dev"
 tags: ['git', 'ssh', 'github', 'devops','multiple-account','config']
+# layout: "../../layouts/Diary.astro"
 ---
 
 Have you ever encountered the frustrating `"Permission denied"` error when trying to push to a Git repository? This happened to me recently, and it turned out to be a classic case of SSH key confusion with multiple GitHub accounts. Here's how I diagnosed and fixed it.
@@ -31,7 +32,7 @@ Let’s break it down:
 
 ### 1. Check Remote Configuration
 
-```bash
+```bash  add=git@github.com
 $ git remote -v
 origin  ssh://git@github.com/alphabet/AI-Toolkit.git (fetch)
 origin  ssh://git@github.com/alphabet/AI-Toolkit.git (push)
@@ -47,7 +48,7 @@ user.email=dev@alphabet.com
 
 ### 3. Test SSH Authentication
 
-```bash
+```bash add=git@github.com
 $ ssh -T git@github.com
 Hi alpha! You've successfully authenticated, but GitHub does not provide shell access.
 ```
@@ -56,7 +57,7 @@ Hi alpha! You've successfully authenticated, but GitHub does not provide shell a
 
 ### 4. Examine SSH Configuration
 
-```ssh-config
+```sh add="github-alphabet" add="github-alpha"
 # Personal account: alpha
 Host github-alpha
   HostName github.com
@@ -84,7 +85,7 @@ git remote set-url origin git@github-alphabet:alphabet/AI-Toolkit.git
 
 ### Step 2: Verify the Change
 
-```bash
+```bash add=git@github-alphabet
 $ git remote -v
 origin  git@github-alphabet:alphabet/AI-Toolkit.git (fetch)
 origin  git@github-alphabet:alphabet/AI-Toolkit.git (push)
@@ -92,7 +93,7 @@ origin  git@github-alphabet:alphabet/AI-Toolkit.git (push)
 
 ### Step 3: Test SSH Authentication
 
-```bash
+```bash  focus=git@github-alphabet
 $ ssh -T git@github-alphabet
 Hi alphabet! You've successfully authenticated, but GitHub does not provide shell access.
 ```

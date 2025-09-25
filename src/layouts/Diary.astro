@@ -1,0 +1,9 @@
+---
+const { title, publishDate, author, Content } = Astro.props;
+---
+
+<article>
+  <h1>{title}</h1>
+  <p>By {author} on {publishDate}</p>
+  <Content />
+</article>
