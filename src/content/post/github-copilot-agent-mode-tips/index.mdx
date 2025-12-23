@@ -4,8 +4,8 @@ description: "A practical guide to configuring Agent Mode, chat modes, instructi
 publishDate: "22 Sep 2025"
 tags: ["GitHub Copilot", "VS Code", "AI Agents", "Developer Tools"]
 ---
-import Screenshot from '@/components/Screenshot.astro'
 
+import Screenshot from "@/components/Screenshot.astro";
 
 # 🧠 Agent Mode in GitHub Copilot Chat
 
@@ -17,7 +17,7 @@ GitHub Copilot Chat now supports **Agent Mode**, enabling powerful customization
 
 usually there is only 2 Mode "Ask" and "Edit"
 
-<Screenshot alt="Agent mode disabled"  name="agentmode-disable.png" />
+<Screenshot alt="Agent mode disabled" name="agentmode-disable.png" />
 
 To activate Agent Mode, update your VS Code settings:
 
@@ -43,7 +43,6 @@ Once Agent Mode is enabled, you'll see a new option called **Agent** and a `Conf
 ---
 
 ## 🧩 Chat Modes
-
 
 🔗 [Chat Modes Documentation](https://code.visualstudio.com/docs/copilot/customization/custom-chat-modes)
 
@@ -72,7 +71,6 @@ model: GPT-5 mini (copilot)
 Markdown body contains instructions and prompts for the agent.
 
 💡 When you define `tools: []`, VS Code shows a **Configure tools..** menu to help you select available tools.
-
 
 <Screenshot alt="Configure Tools option in chatmode file" name="chatmode-tools.png" />
 
@@ -157,6 +155,7 @@ Your goal is to generate a new React form component.
 Ask for the form name and fields if not provided.
 
 Requirements:
+
 - Use `react-hook-form`
 - Use `zod` for validation
 - Define TypeScript types
@@ -179,9 +178,7 @@ Example configuration:
 
 ```json
 {
-  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
-    { "text": "Always include a list of key changes." }
-  ],
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [{ "text": "Always include a list of key changes." }],
   "github.copilot.chat.reviewSelection.instructions": [
     { "file": "guidance/backend-review-guidelines.md" },
     { "file": "guidance/frontend-review-guidelines.md" }
@@ -190,7 +187,6 @@ Example configuration:
 ```
 
 ---
-
 
 ## ✅ Summary
 

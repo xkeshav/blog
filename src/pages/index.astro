@@ -2,7 +2,8 @@
 import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base";
-import { getAllPosts, sortMDByDate } from "@/utils";
+import { sortMDByDate } from "@/utils";
+import { getAllPosts } from "src/lib/server/post";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();

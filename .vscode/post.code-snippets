@@ -10,8 +10,8 @@
       "tags: [\"blog\"]",
       "draft: true",
       "---",
-      "$0"
+      "$0",
     ],
-    "description": "Creates an front matter boilarplate to write blog content"
-  }
+    "description": "Creates an front matter boilarplate to write blog content",
+  },
 }

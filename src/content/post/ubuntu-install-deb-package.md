@@ -1,10 +1,8 @@
 ---
-
 title: "install deb package in Ubuntu"
 publishDate: "15 May 2024"
 description: "How to install a deb package in Ubuntu 24.04"
 tags: ["ubuntu", "install", "deb", " package"]
-
 ---
 
 ## Install .deb file as package
@@ -33,6 +31,6 @@ Note: don't forget to add `./` even you are in same location where package is do
 
  > sudo dpkg -i <./absolute/path/to/package.deb>
 
- ```
+```
 
 Thanks.

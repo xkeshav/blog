@@ -6,7 +6,6 @@ tags: ["blog"]
 draft: true
 ---
 
-
 ## Publish package to NPM registry from github
 
 1. go to npm website
@@ -43,14 +42,13 @@ jobs:
 ```
 
 6. now commit the code and create a release
-    a. create a tag ( click *Tags* near branch name )
-    b. Click on *Releases* tab (<https://github.com/><user>/<repo>/releases)
-    c. Click *Draft a new release* button
-    d. Click *Choose a Tag* , select tag if exist otherwise write new tag it will generate new tag; conventaion will be number x.y.z
-    3. Target ( keep it default selecetd value *main* )
-    e. Select Previos Tag ( if any ) ; it will generate release note from that tag
-    f. click on *generate release note*
-    g. Click on  *Publish Release*
-it will create a Assets ( in zip ) and changelog in release page
+   a. create a tag ( click _Tags_ near branch name )
+   b. Click on _Releases_ tab (<https://github.com/><user>/<repo>/releases)
+   c. Click _Draft a new release_ button
+   d. Click _Choose a Tag_ , select tag if exist otherwise write new tag it will generate new tag; conventaion will be number x.y.z 3. Target ( keep it default selecetd value _main_ )
+   e. Select Previos Tag ( if any ) ; it will generate release note from that tag
+   f. click on _generate release note_
+   g. Click on _Publish Release_
+   it will create a Assets ( in zip ) and changelog in release page
 
-7. go to *Actions* tab and you will see that above workflow started running and when it will finished a new package will be published to npm
+7. go to _Actions_ tab and you will see that above workflow started running and when it will finished a new package will be published to npm

@@ -2,9 +2,8 @@
 title: "Webpack with Express.js server with multiple entry"
 publishDate: "19 May 2024"
 description: "This is a guide how do I set up native HTML/CSS and JavaScript pages with node js and express and with webpack and later deploy it AWS Amplify"
-tags: ["webpack", "express", "amplify", "HTML", "CSS" , "JavaScript", "Node.js"]
+tags: ["webpack", "express", "amplify", "HTML", "CSS", "JavaScript", "Node.js"]
 ---
-
 
 # How to Use Webpack with Node.js Express Based Project with Multiple Entry Points
 
@@ -40,7 +39,7 @@ I began with a simple game involving HTML, CSS, and basic JavaScript. The HTML p
  </body>
  </html>
 
- ```
+```
 
 ## How it grows
 
@@ -58,15 +57,16 @@ As the project expanded, I separated scripts and styles into their respective fo
 and page changes to this
 
 ```html
-
 <head>
   <link type="text/css" rel="stylesheet" href="./style.css" />
- </head>
- <body>
- <header><h1> Alphabet list</h1>
- <main> </main>
- <script async type="text/javascript" src="./script.js">
- </script>
+</head>
+<body>
+  <header>
+    <h1>Alphabet list</h1>
+    <main></main>
+    <script async type="text/javascript" src="./script.js"></script>
+  </header>
+</body>
 ```
 
 ## entry of Node.js

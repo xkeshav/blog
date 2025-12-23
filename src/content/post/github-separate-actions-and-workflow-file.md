@@ -3,10 +3,9 @@ title: "separate actions and workflow file in GitHub"
 description: "custom user action and workflow files in github can be written separately"
 publishDate: "25 Aug 2024"
 tags: ["action", "github", "workflow"]
-
 ---
 
-# Separate GitHub action file and  workflow file
+# Separate GitHub action file and workflow file
 
 During GitHub Workflow action writing yaml file and usually we use `run` to run some action in same file as below
 
@@ -37,7 +36,6 @@ jobs:
           --ignore '.github/CONTRIBUTING.md' \
           --ignore '.github/CODE_OF_CONDUCT.md'\
           --ignore 'CHANGELOG.md'
-
 ```
 
 adding `.markdownlint.json` file near this file
@@ -48,10 +46,9 @@ We can also separate the action completely and call the file using `uses` in pla
 
 ### Action file
 
-created separate **actions** folder inside `.github` folder and create a file name *action.yml*  under one file which is called from file in *workflows* folder
+created separate **actions** folder inside `.github` folder and create a file name _action.yml_ under one file which is called from file in _workflows_ folder
 
 ```yaml title='.github/actions/md-lint/action.yml'
-
 name: md-lint
 description: Run npx markdownlint-cli
 runs:
@@ -64,21 +61,19 @@ runs:
         --ignore '.github/CONTRIBUTING.md' \
         --ignore '.github/CODE_OF_CONDUCT.md'\
         --ignore 'CHANGELOG.md'
-
 ```
 
 Notes
 
-- we can use `\`  writing a long command in multiline
+- we can use `\` writing a long command in multiline
 - filename must be `action.yml` ' this is default file under a folder so no need to mention while calling
-- move `./.markdownlint.json` inside *md-lint* folder
+- move `./.markdownlint.json` inside _md-lint_ folder
 
 ### Workflow File
 
 This is how it is called inside `workflows`
 
 ```yaml title='.github/workflows/markdown.yml'
-
 name: markdown-lint
 run-name: learning github action from workflow
 on:

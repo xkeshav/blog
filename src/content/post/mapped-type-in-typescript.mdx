@@ -12,16 +12,16 @@ recently one of my friend asked me interesting question about typescript.
 
 ```ts
 const arrA = ["one", "two"] as const;
-const a: typeof arrA[number] = "one"; // assigning "One" throw error which is fine
-const b: typeof arrA[number] = "two";
+const a: (typeof arrA)[number] = "one"; // assigning "One" throw error which is fine
+const b: (typeof arrA)[number] = "two";
 ```
 
 now he wants to create a new type which have same keys but with capital like below
 
 ```ts
 const arrB = ["One", "Two"] as const;
-const a: typeof arrB[number] = "One"; // "one" should throw error
-const b: typeof arrB[number] = "Two";
+const a: (typeof arrB)[number] = "One"; // "one" should throw error
+const b: (typeof arrB)[number] = "Two";
 ```
 
 here are my trials
@@ -32,7 +32,7 @@ using javascript map method ato capitalize the each key and then create new type
 
 ```ts
 const arrB = [...arrA.map((e) => e[0].toUpperCase + e.slice(1))] as const;
-type B = typeof arrB[number];
+type B = (typeof arrB)[number];
 const b: B = "One";
 ```
 
@@ -47,7 +47,7 @@ type CapitalKey<Type extends string> = {
   [Key in keyof Type as `${Capitalize<Key & string>}`]: Type[Key];
 };
 
-type Caps = CapitalKey<typeof arrA[number]>;
+type Caps = CapitalKey<(typeof arrA)[number]>;
 const b2: Caps = "One"; // but it gives error and possible value can be 'one' or 'two' only
 ```
 
@@ -58,7 +58,7 @@ now we use it simpler way using `Capitalize` method
 ```ts
 const arrA = ["one", "two"] as const;
 
-type Lower = typeof arrA[number];
+type Lower = (typeof arrA)[number];
 
 type CapitalKey<Type extends string> = Capitalize<Type>;
 

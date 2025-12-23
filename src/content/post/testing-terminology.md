@@ -28,7 +28,7 @@ tags: ["blog"]
 ## Spies
 
 - Are _Stubs_ that record some information based on how they were called.
-eg: email services
+  eg: email services
 
 ## Mocks
 

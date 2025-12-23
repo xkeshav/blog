@@ -5,7 +5,6 @@ publishDate: "12 Oct 2024"
 tags: ["webp", "image", "batch-job", "ubuntu"]
 ---
 
-
 ## What is WebP
 
 webp is most suitable format for web pages ; these are small and render fast

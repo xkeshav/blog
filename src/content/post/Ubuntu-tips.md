@@ -27,66 +27,62 @@ install ubuntu 24.04 using USb or whatever way; here I am telling what I do afte
 - on top there is power button and other settings which can be open using `Super + s` keyboard shortcut
 
 1. Open settings from app Launcher and do some tweaks such as
-
-    - move dash to right
-    - add seconds in time display
+   - move dash to right
+   - add seconds in time display
 
 2. search for do top 10 things to do after install from OMG ubuntu page and [debugpoint](https://www.debugpoint.com/things-to-do-ubuntu-23-10/)
 
 3. install few additional tools using terminal
 
-      ```sh
-        > sudo apt update && sudo apt upgrade
-        > sudo apt install ubuntu-restricted-extras
-        > sudo apt install gnome-shell-extension-ubuntu-tiling-assistant
-        > sudo add-apt-repository universe
-        > sudo apt install fonts-roboto fonts-cascadia-code fonts-firacode
-        > sudo apt install dconf-cli dconf-editor
-        > sudo apt install gnome-tweaks
-      ```
+   ```sh
+     > sudo apt update && sudo apt upgrade
+     > sudo apt install ubuntu-restricted-extras
+     > sudo apt install gnome-shell-extension-ubuntu-tiling-assistant
+     > sudo add-apt-repository universe
+     > sudo apt install fonts-roboto fonts-cascadia-code fonts-firacode
+     > sudo apt install dconf-cli dconf-editor
+     > sudo apt install gnome-tweaks
+   ```
 
 4. install few apps from Ubuntu app store
+   - Gnome Calendar
 
-    - Gnome Calendar
-
-    - Extension Manager
+   - Extension Manager
 
    click on `Apps > software updater` and update the software for once
 
 5. remove key ring options using [this useful article](https://linuxconfig.org/how-to-disable-keyring-popup-on-ubuntu)
 
 6. install few useful packages for development
+   - VS code
 
-    - VS code
+   download _.deb_ package from vscode and install
 
-    download _.deb_ package from vscode and install
+   ```sh
+   > sudo gpkg -i < ~/Downloads/code_1.88.1-1712771838_amd64 >
+   ```
 
-    ```sh
-    > sudo gpkg -i < ~/Downloads/code_1.88.1-1712771838_amd64 >
-    ```
+   - Node js
 
-    - Node js
+     ```sh
+     > sudo apt install nodejs
+     > sudo apt install npm
+     ```
 
-      ```sh
-      > sudo apt install nodejs
-      > sudo apt install npm
-      ```
+   verify once installed using `node -v`
+   - GIT
 
-    verify once installed using `node -v`
+   ```sh
+     > sudo apt install git-all
+   ```
 
-    - GIT
+   - VIM
 
-    ```sh
-      > sudo apt install git-all
-    ```
+   ```sh
+     > sudo apt install vim
+   ```
 
-    - VIM
-
-    ```sh
-      > sudo apt install vim
-    ```
-
-    - TREE
+   - TREE
 
    ```sh
     > sudo apt install tree

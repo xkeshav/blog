@@ -7,7 +7,7 @@ tags: ["ubuntu", "software"]
 
 ## Check all installed software list in ubuntu
 
-In Ubuntu, we can install software either using `apt` or using `snap` but when we want to find how many softwares are installed using these way are difficult  so found 2 methods
+In Ubuntu, we can install software either using `apt` or using `snap` but when we want to find how many softwares are installed using these way are difficult so found 2 methods
 
 ### snap list
 
@@ -17,7 +17,7 @@ use
 ls -l /var/lib/snapd/snaps
 ```
 
- Note: snap keep last 2 versions so you will see same software listed twice but with different version
+Note: snap keep last 2 versions so you will see same software listed twice but with different version
 
 ### apt install list
 

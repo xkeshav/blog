@@ -21,16 +21,16 @@ In Ubuntu, when we connect external hard Disk, it is not automatically mounted j
 This command will show list of all partition; i
 
 sample output
+
 ```bash
 sda
 └─sda1      ntfs           Seagate Backup Plus Drive D012032A120314DE
 nvme0n1
 ```
 
-_Note:_ output might list a all partition ( in case you have windows alongside ) so you have to found which is against `/dev/...`  or use `-f` in place of `-l`
+_Note:_ output might list a all partition ( in case you have windows alongside ) so you have to found which is against `/dev/...` or use `-f` in place of `-l`
 
-here we see that name show under */sda/sda1* ; but we will use `/dev/sda1` later
-
+here we see that name show under _/sda/sda1_ ; but we will use `/dev/sda1` later
 
 ### another command
 
@@ -43,7 +43,8 @@ output will contains your hard disk details
 ```bash
 > /dev/sda1: LABEL="Seagate Backup Plus Drive" BLOCK_SIZE="512" UUID="D012032A120314DE" TYPE="ntfs" PARTUUID="db2dad7b-01"
 ```
- so your hard dik type is `ntfs`
+
+so your hard dik type is `ntfs`
 
 ### Create a directory in your file system
 
@@ -61,9 +62,7 @@ use below method
 > sudo mount /dev/sda1 ~/external
 ```
 
-
 That's all.
-
 
 ### References
 

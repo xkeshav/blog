@@ -36,8 +36,8 @@ below is my package.json file
 One common error message looks like this:
 
 ```bash
-Could not find a declaration file for module '@author/package-name'. 
-'/project/node_modules/@author/package-name/src/index.js' implicitly has an 'any' type. 
+Could not find a declaration file for module '@author/package-name'.
+'/project/node_modules/@author/package-name/src/index.js' implicitly has an 'any' type.
 Try `npm i --save-dev @types/author__package-name` if it exists or add a new declaration (.d.ts) file containing `declare module '@author/package-name'`.
 ```
 

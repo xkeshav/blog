@@ -37,4 +37,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-once you create a release ; it will generate a package and it will be visible on right side of repo under *Packages*
+once you create a release ; it will generate a package and it will be visible on right side of repo under _Packages_

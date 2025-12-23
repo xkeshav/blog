@@ -26,15 +26,16 @@ install nvm: check for latest version [on nvm page](https://github.com/nvm-sh/nv
 reload bash
 
 ``sh
+
 > source ~/.bashrc
 
-```
+````
 
 install nvm
 
 ```sh
 > nvm install node
-```
+````
 
 it will download latest node js version
 

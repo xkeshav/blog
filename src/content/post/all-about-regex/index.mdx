@@ -119,7 +119,6 @@ const matches = str.match(stringRegex);
 while ((result = str.match(stringRegex)) !== null) {
   doSomethingWith(result);
 }
-
 ```
 
 Note: above will return Array(21) every word and empty string as match. why?
@@ -145,7 +144,7 @@ const str = "there are 33 states and 7 union territory in india.";
 
 const matches = str.matchAll(stringRegex);
 
-console.log({matches}); // this will be RegExpStringIterator
+console.log({ matches }); // this will be RegExpStringIterator
 
 const output = Array.from(matches);
 ```
@@ -158,12 +157,12 @@ for eg, I have to find out browser and version both from a user agent string
 
 navigator.userAgent gives below output in WritableStreamDefaultWriter
 
-> *"'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"*
+> _"'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"_
 
 ```js
-const str = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
-const pattern = '(\\w*)/\(\\d*)+.(\\d*)'
-const rx = new RegExp(pattern, 'gi');
+const str = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
+const pattern = "(\\w*)/\(\\d*)+.(\\d*)";
+const rx = new RegExp(pattern, "gi");
 const matches = str.matchAll(rx);
 console.log([...matches]);
 ```
@@ -172,31 +171,11 @@ which will give below result
 
 ```js
 [
-    [
-        "Mozilla/5.0",
-        "Mozilla",
-        "5",
-        "0"
-    ],
-    [
-        "AppleWebKit/537.36",
-        "AppleWebKit",
-        "537",
-        "36"
-    ],
-    [
-        "Chrome/126.0",
-        "Chrome",
-        "126",
-        "0"
-    ],
-    [
-        "Safari/537.36",
-        "Safari",
-        "537",
-        "36"
-    ]
-]
+  ["Mozilla/5.0", "Mozilla", "5", "0"],
+  ["AppleWebKit/537.36", "AppleWebKit", "537", "36"],
+  ["Chrome/126.0", "Chrome", "126", "0"],
+  ["Safari/537.36", "Safari", "537", "36"],
+];
 ```
 
 but above is the result I have coped from console which show each entry as `Array(4)` but actually result structure is an mixed array ( PHP called it associative array, in Javascript it is called what?)
@@ -222,10 +201,10 @@ now we got all result but we want that it must separate each entry like
 
 and so on
 
-we can achieve this using capture group `(?<name>)`; lets  change the regex
+we can achieve this using capture group `(?<name>)`; lets change the regex
 
 ```js
-const pattern = '(?<Browser>\\w*)/\(?<Version>\\d*).(\\d*)'
+const pattern = "(?<Browser>\\w*)/\(?<Version>\\d*).(\\d*)";
 ```
 
 and now see the result and each entry have value under `groups` key
@@ -248,8 +227,7 @@ still we are not getting complete version including minor and patch ; we are get
 so modify the regex again and create a complete group for the version
 
 ```javascript
-const pattern = '(?<Browser>\\w*)/\(?<Version>(\\d*).(\\d*)+)'
+const pattern = "(?<Browser>\\w*)/\(?<Version>(\\d*).(\\d*)+)";
 ```
 
-Task:  works fine when we have version up to 2 dots  but for chrome we have `126.0.0.0` and we want to capture complete; what could be the proper regex?
-
+Task: works fine when we have version up to 2 dots but for chrome we have `126.0.0.0` and we want to capture complete; what could be the proper regex?

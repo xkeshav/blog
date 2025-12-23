@@ -1,7 +1,8 @@
 ---
 import SocialShare from "@/components/SocialShare.astro";
 import PostLayout from "@/layouts/BlogPost";
-import { getAllPosts } from "@/utils";
+import { getAllPosts } from "@/lib/server/post";
+
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 
 export const getStaticPaths = (async () => {

@@ -8,7 +8,6 @@ main {
     grid-template-columns: repeat(4, 1fr);
     height: calc(100vh - 10px);
 
-
     & section {
       & details {
         width: auto;
@@ -26,10 +25,9 @@ main {
           font-variant: small-caps;
           margin-inline: -0.5rem;
 
-          ~* {
+          ~ * {
             animation: sweep 500ms ease-in-out;
           }
-
         }
 
         & ::marker {
@@ -37,7 +35,6 @@ main {
           color: green;
           margin-left: 8px;
         }
-
 
         &[open] {
           border-width: 1px;
@@ -56,14 +53,13 @@ main {
           }
         }
 
-
         & p {
           font-family: "Courier New", Courier, monospace;
           font-variant: petite-caps;
           font-weight: bold;
           letter-spacing: 3px;
           font-size: 2rem;
-          padding-inline: 0.75rem
+          padding-inline: 0.75rem;
         }
       }
     }
@@ -73,12 +69,12 @@ main {
 @keyframes sweep {
   0% {
     opacity: 0;
-    margin-left: -10px
+    margin-left: -10px;
   }
 
   100% {
     opacity: 1;
-    margin-left: 0px
+    margin-left: 0px;
   }
 }
 

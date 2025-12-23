@@ -1,10 +1,9 @@
 ---
-
 title: "Fixing Git Access Issue having Multiple GitHub Accounts"
 description: "How to resolve GitHub SSH permission errors when juggling multiple accounts and get access denied issue despite having valid github user config."
 publishDate: "26 Sept 2025"
 author: "Alpha Dev"
-tags: ['git', 'ssh', 'github', 'devops','multiple-account','config']
+tags: ["git", "ssh", "github", "devops", "multiple-account", "config"]
 # layout: "../../layouts/Diary.astro"
 ---
 
@@ -32,7 +31,7 @@ Let’s break it down:
 
 ### 1. Check Remote Configuration
 
-```bash  add=git@github.com
+```bash add=git@github.com
 $ git remote -v
 origin  ssh://git@github.com/alphabet/AI-Toolkit.git (fetch)
 origin  ssh://git@github.com/alphabet/AI-Toolkit.git (push)
@@ -93,7 +92,7 @@ origin  git@github-alphabet:alphabet/AI-Toolkit.git (push)
 
 ### Step 3: Test SSH Authentication
 
-```bash  focus=git@github-alphabet
+```bash focus=git@github-alphabet
 $ ssh -T git@github-alphabet
 Hi alphabet! You've successfully authenticated, but GitHub does not provide shell access.
 ```
@@ -132,7 +131,7 @@ Host github-personal
 # For work repositories
 git remote add origin git@github-work:alphabet/repo.git
 
-# For personal repositories  
+# For personal repositories
 git remote add origin git@github-personal:alpha/repo.git
 ```
 

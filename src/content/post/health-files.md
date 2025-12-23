@@ -3,7 +3,6 @@ title: "GitHub Health Files"
 description: "This is about HitHub Community Health Files and their significance and usability with example"
 publishDate: "20 Aug 2024"
 tags: ["blog", "github", "open-source", "community", "health-files", "package.json"]
-
 ---
 
 ## Health Files
@@ -14,7 +13,6 @@ tags: ["blog", "github", "open-source", "community", "health-files", "package.js
 - LICENSE
 - CODE_OF_CONDUCT.md
 - CONTRIBUTION_GUIDE.md
-
 
 Additional files which help to build a inclusive open source project and invite for collaboration
 

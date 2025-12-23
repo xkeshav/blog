@@ -28,7 +28,7 @@ then _cursor_ theme sub directory ( in my case cursor theme is _DMZ-Black_ )
 
 ```sh
  > cd DMZ-Black/cursors
- ```
+```
 
 and run below command
 

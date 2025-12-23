@@ -3,7 +3,6 @@ title: "GitHub Action workflow Yaml syntax variations"
 description: "different variations in yaml file to define github workflow file"
 publishDate: "25 Aug 2024"
 tags: ["github", "yaml", "syntax", "pattern", "actions"]
-
 ---
 
 # variation of GitHub Workflow YAML syntax

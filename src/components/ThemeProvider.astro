@@ -13,10 +13,7 @@
     const root = document.documentElement;
 
     // class already set to newTheme, exit early
-    if (
-      (newTheme === "dark" && root.classList.contains("dark")) ||
-      (newTheme === "light" && !root.classList.contains("dark"))
-    ) {
+    if ((newTheme === "dark" && root.classList.contains("dark")) || (newTheme === "light" && !root.classList.contains("dark"))) {
       return;
     }
 

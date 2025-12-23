@@ -10,7 +10,6 @@
   --light__heading__txt: #eb3099;
 }
 
-
 .work__section {
   color: light-dark(var(--light__txt), var(--dark__txt));
   display: grid;
@@ -48,6 +47,6 @@
   }
 
   & .article__link {
-    @apply inline-flex items-center font-medium text-blue-600 hover:underline
+    @apply inline-flex items-center font-medium text-blue-600 hover:underline;
   }
 }

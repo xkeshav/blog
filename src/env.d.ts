@@ -11,4 +11,3 @@ declare module "@pagefind/default-ui" {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
-

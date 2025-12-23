@@ -1,6 +1,5 @@
 {
   "name": "xkeshav-portfolio",
-  "version": "1.8.5",
   "displayName": "xkeshav.com",
   "description": "This is a xkeshav.com repository.",
   "private": false,
@@ -26,7 +25,8 @@
     "name": "Keshav Mohta",
     "email": "xkeshav@gmail.com"
   },
-  "contributors": [ ],
+  "contributors": [],
+  "version": "1.8.5",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -43,7 +43,7 @@
     "@astrojs/sitemap": "3.4.1",
     "@astrojs/tailwind": "^5.0.3",
     "astro": "5.4.1",
-    "astro-expressive-code": "^0.33.0",
+    "astro-expressive-code": "^0.5.0",
     "astro-icon": "^1.1.1",
     "marked": "^15.0.6",
     "rehype-external-links": "^3.0.0",

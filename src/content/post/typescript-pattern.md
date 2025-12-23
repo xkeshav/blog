@@ -10,20 +10,19 @@ tags: ["typescript", "typing", "pattern", "DOM"]
 
 using the colon symbol followed by the type we want to use.
 
-
 now there are 3 way to annotate ( note in below example `T` is just a _type_ )
 
-
 ```ts
-const someThing :T = 'whatever';
-const something = 'whatever' as T;
+const someThing: T = "whatever";
+const something = "whatever" as T;
 ```
+
 if method is there then
 
 ```ts
 const someThing = someMethod<T>(...params);
 // or
-const someThing:T = someMethod(...params);
+const someThing: T = someMethod(...params);
 const someThing = someMethod(...params) as T;
 ```
 
@@ -33,7 +32,7 @@ const someThing = someMethod(...params) as T;
 
 while it is possible to explicit annotate but rely on inferred type which done by typescript type system
 
-VS Code __Inlay Hints__ does the same
+VS Code **Inlay Hints** does the same
 
 ```ts
 const n = 10;
@@ -42,7 +41,7 @@ const now = new Date(); // Date type
 
 and when you hover on `n` , its type is `number`; there is no need to set explicit type ( i.e. type annotate `:number` )
 
-many occurrences, typescript set explicit  `any`
+many occurrences, typescript set explicit `any`
 
 // we could modify our _TSConfig_ to allow implicit typings `any` `noImplicitAny: true`
 
@@ -69,11 +68,7 @@ const arrowDate: (a: number, b: number) => Date = (a: number, b: number) => new 
 const arrowDate_: Date = (a: number, b: number) => new Date(a, b); // invalid ( replace `Date`` with `any` just for execution purpose)
 const arrowDate__ = (a: number, b: number): Date => new Date(a, b); // valid
 
-const [d, _d, __d] = [
-  arrowDate(2024, 0),
-  arrowDate_(2024, 0),
-  arrowDate__(2024, 0),
-];
+const [d, _d, __d] = [arrowDate(2024, 0), arrowDate_(2024, 0), arrowDate__(2024, 0)];
 
 console.log({ d, _d, __d });
 ```
@@ -86,7 +81,6 @@ const arrowDateFunction: DateFn = (a, b) => new Date(a, b);
 // const arrowDateFunction: DateFn = (a, b): DateFn => new Date(a, b); // invalid
 const what = arrowDateFunction(24, 2);
 console.log({ what });
-
 ```
 
 ### References

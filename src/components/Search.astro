@@ -5,11 +5,7 @@ import "@pagefind/default-ui/css/ui.css";
 ---
 
 <site-search id="search" class="ms-auto">
-  <button
-    data-open-modal
-    disabled
-    class="flex h-9 w-9 items-center justify-center rounded-md ring-zinc-400 transition-all hover:ring-2"
-  >
+  <button data-open-modal disabled class="flex h-9 w-9 items-center justify-center rounded-md ring-zinc-400 transition-all hover:ring-2">
     <svg
       aria-label="search"
       class="h-7 w-7"
@@ -32,9 +28,7 @@ import "@pagefind/default-ui/css/ui.css";
     class="h-full max-h-full w-full max-w-full border border-zinc-400 bg-bgColor shadow backdrop:backdrop-blur sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-h-[calc(100%-8rem)] sm:min-h-[15rem] sm:w-5/6 sm:max-w-[48rem] sm:rounded-md"
   >
     <div class="dialog-frame flex flex-col gap-4 p-6 pt-12 sm:pt-6">
-      <button data-close-modal class="ms-auto cursor-pointer rounded-md bg-zinc-200 p-2 font-semibold dark:bg-zinc-700"
-      >Close</button
-      >
+      <button data-close-modal class="ms-auto cursor-pointer rounded-md bg-zinc-200 p-2 font-semibold dark:bg-zinc-700">Close</button>
       {
         import.meta.env.DEV ? (
           <div class="mx-auto text-center">
@@ -99,8 +93,7 @@ import "@pagefind/default-ui/css/ui.css";
       // check if it's a link
       const isLink = "href" in (event.target || {});
       // make sure the click is either a link or outside of the dialog
-      if (isLink || (document.body.contains(event.target as Node) && !this.dialogFrame.contains(event.target as Node)))
-        this.closeModal();
+      if (isLink || (document.body.contains(event.target as Node) && !this.dialogFrame.contains(event.target as Node))) this.closeModal();
     };
 
     onWindowKeydown = (e: KeyboardEvent) => {
@@ -163,12 +156,7 @@ import "@pagefind/default-ui/css/ui.css";
     background-size: 100% 6px;
     background-position: bottom;
     background-repeat: repeat-x;
-    background-image: linear-gradient(
-      transparent,
-      transparent 5px,
-      theme("colors.textColor") 5px,
-      theme("colors.textColor")
-    );
+    background-image: linear-gradient(transparent, transparent 5px, theme("colors.textColor") 5px, theme("colors.textColor"));
   }
 
   #blog__search .pagefind-ui__result-link:hover {

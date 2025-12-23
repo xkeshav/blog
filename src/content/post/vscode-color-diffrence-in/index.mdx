@@ -5,7 +5,6 @@ publishDate: "26 Sep 2024"
 tags: ["vscode", "typescript", "typing", "tips", "react", "reactFC", "functional component"]
 ---
 
-
 ## Color Differences in React Components in VS Code
 
 When you import component names in your React project, you might notice they appear in different colors. At first, you might think this is due to your theme settings. However, there’s a specific reason behind the color differences for these two components.
@@ -37,7 +36,7 @@ In contrast, the **Letter** component uses a different approach by exporting at 
 ```tsx title='Letter.tsx'
 const Letter: React.FC<LetterProps> = () => {
   // implementation
-}
+};
 
 export { Letter };
 ```
@@ -67,7 +66,7 @@ To align their types, I modified the typing for `Letter` as follows:
 ```tsx title='Letter.tsx'
 const Letter = (props: LetterProps) => {
   // implementation
-}
+};
 ```
 
 **Note:** The previous typing method may cause other issues, which I will discuss another time.
@@ -86,8 +85,8 @@ In TypeScript, when defining types for React components, the placement of the ty
 
    ```tsx
    const Letter: React.FC<LetterProps> = () => {
-       // implementation
-   }
+     // implementation
+   };
    ```
 
    This is known as **Type Annotation** or **Type Declaration**. It specifies that `Letter` is a functional component that adheres to the `React.FC` (Function Component) type, which allows for props to be passed into it. The `LetterProps` indicates the shape of the props that the component expects.
@@ -96,8 +95,8 @@ In TypeScript, when defining types for React components, the placement of the ty
 
    ```tsx
    const Letter = (props: LetterProps) => {
-       // implementation
-   }
+     // implementation
+   };
    ```
 
    This is referred to as **Inline Type Annotation**. Here, `LetterProps` defines the structure of the `props` object that is being passed to the component. This method can be useful for quickly defining types without explicitly stating that the component is a functional component.

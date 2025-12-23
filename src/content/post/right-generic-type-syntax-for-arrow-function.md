@@ -6,7 +6,6 @@ tags: ["typescript", "function component", "arrow function", "fat arrow", "gener
 draft: false
 ---
 
-
 # Genaric Type syntax for Arrow function
 
 using a function which gives random item from a list but it was written inside a method; so extract the method and make it generic so that if I pass number[] and return will be number
@@ -28,10 +27,10 @@ randomFrom(themes);
 
 ths gives type error
 
-## Trial 1: added return type (  not working )
+## Trial 1: added return type ( not working )
 
 ```ts
-const randomFrom = (list: T[]):T => list[Math.floor(Math.random() * list.length)];
+const randomFrom = (list: T[]): T => list[Math.floor(Math.random() * list.length)];
 // Cannot find name 'T'. ts(2304)
 ```
 
@@ -56,14 +55,14 @@ randomFrom<string>(themes);
 
 ```
 
-## Trial 3:  Added ahead of function name ( not working )
+## Trial 3: Added ahead of function name ( not working )
 
 ```ts
-const randomFrom:T = (list: T[]):T => list[Math.floor(Math.random() * list.length)];
+const randomFrom: T = (list: T[]): T => list[Math.floor(Math.random() * list.length)];
 // Cannot find name 'T'. under every T
 ```
 
-but interestingly,  this time error on below code has been gone
+but interestingly, this time error on below code has been gone
 
 ```ts
 randomFrom<string>(themeNames);
@@ -78,7 +77,6 @@ const randomFrom = <T>(list: T[]): T => list[Math.floor(Math.random() * list.len
 and later
 
 ```ts
-
 const randomName = randomFrom<string>(themeNames);
 ```
 
@@ -103,8 +101,7 @@ const randomName = randomFrom(themeNames);
 and if you hover on the method name it will show the correct tying instead of `T` as below
 
 ```ts
-const randomFrom: <string>(list: string[]) => string
-
+const randomFrom: <string>(list: string[]) => string;
 ```
 
 ## Final Typed version

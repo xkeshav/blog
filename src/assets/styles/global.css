@@ -40,12 +40,14 @@
     animation: mask-up;
     animation-timeline: scroll(self);
     animation-range: 0 1rem;
-    mask-composite: exclude
+    mask-composite: exclude;
   }
 
   @keyframes mask-up {
     to {
-      mask-size: 100% 120px, 100% 100%
+      mask-size:
+        100% 120px,
+        100% 100%;
     }
   }
 }

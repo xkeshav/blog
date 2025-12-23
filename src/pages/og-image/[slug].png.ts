@@ -1,5 +1,7 @@
 import { siteConfig } from "@/site-config";
-import { getAllPosts, getFormattedDate } from "@/utils";
+import { getFormattedDate } from "@/utils";
+import { getAllPosts } from "@/lib/server/post";
+
 import { Resvg } from "@resvg/resvg-js";
 import type { APIContext, GetStaticPaths } from "astro";
 import { getEntryBySlug } from "astro:content";
@@ -37,13 +39,7 @@ const markup = (title: string, pubDate: string) =>
     </div>
     <div tw="flex items-center justify-between w-full p-10 border-t border-[#2bbc89] text-xl">
       <div tw="flex items-center">
-        <svg
-          viewBox="-102.4 -102.4 1228.80 1228.80"
-          fill="#000000"
-          class="icon"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg viewBox="-102.4 -102.4 1228.80 1228.80" fill="#000000" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="SVGRepo_iconCarrier">

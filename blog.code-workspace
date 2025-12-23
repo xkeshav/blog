@@ -1,13 +1,11 @@
 {
   "folders": [
     {
-      "path": "."
-    }
+      "path": ".",
+    },
   ],
   "settings": {
-    "prettier.documentSelectors": [
-      "**/*.astro"
-    ],
+    "prettier.documentSelectors": ["**/*.astro"],
     "workbench.colorCustomizations": {
       "activityBar.activeBackground": "#763547",
       "activityBar.background": "#763547",
@@ -27,39 +25,36 @@
       "titleBar.inactiveBackground": "#53253299",
       "titleBar.inactiveForeground": "#e7e7e799",
       "sideBar.border": "#763547",
-      "tab.activeBorder": "#763547"
+      "tab.activeBorder": "#763547",
     },
     "peacock.color": "#532532",
     "prettier.endOfLine": "lf",
     "prettier.printWidth": 150,
     "editor.inlayHints.enabled": "offUnlessPressed",
-    "cSpell.words": [
-      "ffplay",
-      "keyof"
-    ],
+    "cSpell.words": ["ffplay", "keyof"],
     "editor.defaultFormatter": "astro-build.astro-vscode",
     "editor.tabSize": 4,
     "editor.detectIndentation": true,
     "[css]": {
-      "editor.defaultFormatter": "vscode.css-language-features"
+      "editor.defaultFormatter": "vscode.css-language-features",
     },
     "[markdown]": {
       "editor.snippetSuggestions": "top",
       "editor.quickSuggestions": {
         "other": true,
         "comments": true,
-        "strings": true
-      }
+        "strings": true,
+      },
     },
     "editor.unfoldOnClickAfterEndOfLine": true,
     "[snippets]": {
-      "editor.defaultFormatter": "vscode.json-language-features"
+      "editor.defaultFormatter": "vscode.json-language-features",
     },
     "editor.snippetSuggestions": "top",
     "git.postCommitCommand": "push",
     "git.rememberPostCommitCommand": true,
     "[xml]": {
-      "editor.defaultFormatter": "redhat.vscode-xml"
+      "editor.defaultFormatter": "redhat.vscode-xml",
     },
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
@@ -71,12 +66,12 @@
       "package.json": "package-lock.json",
       ".gitignore": ".prettier*, .editorconfig, .eslint*, .npm*, .nojekyll",
       "readme.md": "*.md",
-      "astro.config.ts": "*.config.js, *.config.ts, *.config.mjs"
+      "astro.config.ts": "*.config.js, *.config.ts, *.config.mjs",
     },
     "files.exclude": {
-      "dist/**": true
+      "dist/**": true,
     },
     "explorer.compactFolders": false,
     "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace",
-  }
+  },
 }
