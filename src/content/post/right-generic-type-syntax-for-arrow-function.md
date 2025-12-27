@@ -6,7 +6,7 @@ tags: ["typescript", "function component", "arrow function", "fat arrow", "gener
 draft: false
 ---
 
-# Genaric Type syntax for Arrow function
+# Generic Type syntax for Arrow function
 
 using a function which gives random item from a list but it was written inside a method; so extract the method and make it generic so that if I pass number[] and return will be number
 

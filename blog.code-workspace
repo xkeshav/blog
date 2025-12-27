@@ -5,7 +5,7 @@
     },
   ],
   "settings": {
-    "prettier.documentSelectors": ["**/*.astro"],
+    "prettier.documentSelectors": [ "**/*.astro" ],
     "workbench.colorCustomizations": {
       "activityBar.activeBackground": "#763547",
       "activityBar.background": "#763547",
@@ -25,13 +25,17 @@
       "titleBar.inactiveBackground": "#53253299",
       "titleBar.inactiveForeground": "#e7e7e799",
       "sideBar.border": "#763547",
-      "tab.activeBorder": "#763547",
+      "tab.activeBorder": "#763547"
     },
     "peacock.color": "#532532",
     "prettier.endOfLine": "lf",
     "prettier.printWidth": 150,
     "editor.inlayHints.enabled": "offUnlessPressed",
-    "cSpell.words": ["ffplay", "keyof"],
+    "cSpell.words": [
+      "ffplay",
+      "keyof",
+      "prereleased"
+    ],
     "editor.defaultFormatter": "astro-build.astro-vscode",
     "editor.tabSize": 4,
     "editor.detectIndentation": true,

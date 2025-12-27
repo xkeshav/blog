@@ -8,6 +8,7 @@ import fs from "fs";
 import rehypeExternalLinks from "rehype-external-links";
 import remarkUnwrapImages from "remark-unwrap-images";
 import { remarkReadingTime } from "./src/utils/remark-reading-time";
+import { default as expressiveCode } from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,7 +37,9 @@ export default defineConfig({
   },
   integrations: [
     icon({ iconDir: "src/icons" }),
-
+    expressiveCode({
+      themes: ["github-dark"],
+    }),
     mdx({}),
     tailwind({
       applyBaseStyles: false,
